@@ -1,0 +1,140 @@
+{
+  "brand": {
+    "name": "Aurentis Lifesciences LLP"
+  },
+  "nav": {
+    "links": [
+      { "label": "Home", "href": "#home" },
+      { "label": "About", "href": "#about" },
+      { "label": "Products", "href": "#products" },
+      { "label": "Contact", "href": "#contact" }
+    ],
+    "cta": "Call Us"
+  },
+  "hero": {
+    "tagline": "Health. Care. Trust.",
+    "headline": ["MAKING QUALITY", "PHARMA ACCESS", "EASY & TRUSTED"],
+    "subheadline": "Aurentis Lifesciences LLP delivers trusted pharmaceutical and nutraceutical care across India — making quality medicines accessible, reliable, and patient-first for every household we serve.",
+    "cta_primary": "Explore Products",
+    "cta_secondary": "About Us",
+    "highlights": ["Quality", "Safety", "Care"],
+    "stats": [
+      { "value": "+500", "label": "Products Available" },
+      { "value": "+1000", "label": "Happy Clients" },
+      { "value": "10+", "label": "Years Experience" },
+      { "value": "Pan India", "label": "Distribution" }
+    ]
+  },
+  "about": {
+    "badge": "Who We Are",
+    "heading": "Aurentis Lifesciences LLP",
+    "description": "Based in South Delhi, Aurentis Lifesciences LLP is a trusted pharmaceutical partner committed to quality, safety, and accessibility. We specialise in nutraceuticals and therapeutic care across cardiovascular, orthopaedic, diabetic, dermatology, and neurology segments — bringing science-backed formulations to patients and healthcare professionals nationwide.",
+    "cardTitle": "Pharmaceutical Excellence",
+    "cardText": "Formulated with care. Delivered with trust. Serving India with uncompromising quality standards.",
+    "stats": [
+      { "value": "500+", "label": "Products" },
+      { "value": "1000+", "label": "Clients" },
+      { "value": "10+", "label": "Years" },
+      { "value": "Pan India", "label": "Reach" }
+    ],
+    "values": [
+      {
+        "title": "Quality Assured",
+        "description": "Every formulation follows rigorous quality checks so patients receive safe, consistent, and reliable care."
+      },
+      {
+        "title": "Patient First",
+        "description": "We design products around real clinical needs — making access simple, affordable, and dependable."
+      },
+      {
+        "title": "Natural & Safe",
+        "description": "Science-backed nutraceuticals and therapies crafted with a focus on purity, safety, and long-term wellness."
+      }
+    ]
+  },
+  "products": {
+    "badge": "Our Range",
+    "heading": "Premium Healthcare Products",
+    "subheading": "A carefully curated range of nutraceuticals and therapeutic products, developed to support immunity, heart health, bone strength, diabetic care, skin wellness, and neurological balance.",
+    "filters": [
+      "All",
+      "Nutraceuticals",
+      "Cardiovascular",
+      "Orthopaedics",
+      "Diabetic Care",
+      "Dermatology",
+      "Neurology"
+    ],
+    "cta": "Enquire Now",
+    "items": [
+      {
+        "id": 1,
+        "name": "Immunity Booster",
+        "category": "Nutraceuticals",
+        "description": "A daily-care nutraceutical blend formulated to strengthen natural defence, support vitality, and help the body stay resilient through seasonal change.",
+        "tags": ["Immunity", "Daily Care", "Vitality"],
+        "badge": "Bestseller"
+      },
+      {
+        "id": 2,
+        "name": "OmegaShield Capsules",
+        "category": "Cardiovascular",
+        "description": "Essential omega support designed to promote heart health, circulation, and lipid balance as part of a heart-conscious lifestyle.",
+        "tags": ["Heart Health", "Omega", "Circulation"],
+        "badge": "Popular"
+      },
+      {
+        "id": 3,
+        "name": "BoneMax Forte",
+        "category": "Orthopaedics",
+        "description": "Advanced bone and joint nutrition to support calcium utilisation, mobility, and musculoskeletal strength for active living.",
+        "tags": ["Bones", "Joints", "Mobility"],
+        "badge": "New"
+      },
+      {
+        "id": 4,
+        "name": "GlucoBalance Pro",
+        "category": "Diabetic Care",
+        "description": "A specialised diabetic-care formula created to complement glucose management, metabolic wellness, and everyday energy stability.",
+        "tags": ["Glucose", "Metabolic", "Energy"],
+        "badge": ""
+      },
+      {
+        "id": 5,
+        "name": "DermaGlow Collagen",
+        "category": "Dermatology",
+        "description": "Collagen-focused dermatological support that nourishes skin from within for elasticity, hydration, and a healthy natural glow.",
+        "tags": ["Collagen", "Skin", "Glow"],
+        "badge": "Popular"
+      },
+      {
+        "id": 6,
+        "name": "NeuroCare Syrup",
+        "category": "Neurology",
+        "description": "A restorative neurological syrup developed to support nerve health, cognitive calm, and balanced daily nervous-system function.",
+        "tags": ["Nerves", "Cognition", "Balance"],
+        "badge": "New"
+      }
+    ]
+  },
+  "footer": {
+    "tagline": "Health. Care. Trust.",
+    "description": "Aurentis Lifesciences LLP is dedicated to making quality pharmaceutical access easy and trusted — serving patients, partners, and healthcare professionals across India.",
+    "address": "I-320, Gali No-13, Hari Nagar Extension, Jaitpur, Badarpur, South Delhi - 110044",
+    "phones": ["9811814126", "9818360612"],
+    "gstin": "06ACPFA0619N1Z5",
+    "links": {
+      "quick": [
+        { "label": "Home", "href": "#home" },
+        { "label": "About", "href": "#about" },
+        { "label": "Products", "href": "#products" },
+        { "label": "Contact", "href": "#contact" }
+      ]
+    },
+    "quickHeading": "Quick Links",
+    "contactHeading": "Contact Us",
+    "gstinLabel": "GSTIN",
+    "designed": "Designed for healthcare excellence",
+    "copyright": "© 2026 Aurentis Lifesciences LLP. All rights reserved."
+  }
+}
