@@ -63,7 +63,7 @@
   "products": {
     "badge": "Our Range",
     "heading": "Premium Healthcare Products",
-    "subheading": "A carefully curated range of nutraceuticals and therapeutic products, developed to support immunity, heart health, bone strength, diabetic care, skin wellness, and neurological balance.",
+    "subheading": "Carefully curated nutraceuticals and therapeutics, crafted to support immunity, heart health, strength, skin wellness, and overall well-being.",
     "filters": [
       "All",
       "Nutraceuticals",
@@ -74,12 +74,31 @@
       "Neurology"
     ],
     "cta": "Enquire Now",
+    "trust": [
+      {
+        "title": "Quality Assured",
+        "text": "Every batch tested for purity and safety."
+      },
+      {
+        "title": "Trusted by Experts",
+        "text": "Recommended by healthcare professionals."
+      },
+      {
+        "title": "Science Backed",
+        "text": "Formulations grounded in clinical research."
+      },
+      {
+        "title": "Made for India",
+        "text": "Built around Indian health needs."
+      }
+    ],
     "items": [
       {
         "id": 1,
         "name": "Immunity Booster",
         "category": "Nutraceuticals",
-        "description": "A daily-care nutraceutical blend formulated to strengthen natural defence, support vitality, and help the body stay resilient through seasonal change.",
+        "visual": "immunity",
+        "description": "Daily nutraceutical blend to strengthen natural defence and keep vitality steady through seasonal change.",
         "tags": ["Immunity", "Daily Care", "Vitality"],
         "badge": "Bestseller"
       },
@@ -87,7 +106,8 @@
         "id": 2,
         "name": "OmegaShield Capsules",
         "category": "Cardiovascular",
-        "description": "Essential omega support designed to promote heart health, circulation, and lipid balance as part of a heart-conscious lifestyle.",
+        "visual": "omega",
+        "description": "Essential omega support for heart health, circulation, and balanced lipids in everyday care.",
         "tags": ["Heart Health", "Omega", "Circulation"],
         "badge": "Popular"
       },
@@ -95,7 +115,8 @@
         "id": 3,
         "name": "BoneMax Forte",
         "category": "Orthopaedics",
-        "description": "Advanced bone and joint nutrition to support calcium utilisation, mobility, and musculoskeletal strength for active living.",
+        "visual": "bone",
+        "description": "Advanced bone and joint nutrition to support strength, mobility, and active living.",
         "tags": ["Bones", "Joints", "Mobility"],
         "badge": "New"
       },
@@ -103,7 +124,8 @@
         "id": 4,
         "name": "GlucoBalance Pro",
         "category": "Diabetic Care",
-        "description": "A specialised diabetic-care formula created to complement glucose management, metabolic wellness, and everyday energy stability.",
+        "visual": "gluco",
+        "description": "Specialised diabetic-care formula to complement glucose management and everyday energy.",
         "tags": ["Glucose", "Metabolic", "Energy"],
         "badge": ""
       },
@@ -111,7 +133,8 @@
         "id": 5,
         "name": "DermaGlow Collagen",
         "category": "Dermatology",
-        "description": "Collagen-focused dermatological support that nourishes skin from within for elasticity, hydration, and a healthy natural glow.",
+        "visual": "derma",
+        "description": "Collagen support that nourishes skin from within for elasticity, hydration, and a healthy glow.",
         "tags": ["Collagen", "Skin", "Glow"],
         "badge": "Popular"
       },
@@ -119,7 +142,8 @@
         "id": 6,
         "name": "NeuroCare Syrup",
         "category": "Neurology",
-        "description": "A restorative neurological syrup developed to support nerve health, cognitive calm, and balanced daily nervous-system function.",
+        "visual": "neuro",
+        "description": "Restorative syrup developed to support nerve health, cognitive calm, and daily balance.",
         "tags": ["Nerves", "Cognition", "Balance"],
         "badge": "New"
       }
