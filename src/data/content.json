@@ -17,12 +17,16 @@
     "subheadline": "Aurentis Lifesciences LLP delivers trusted pharmaceutical and nutraceutical care across India — making quality medicines accessible, reliable, and patient-first for every household we serve.",
     "cta_primary": "Explore Products",
     "cta_secondary": "About Us",
-    "highlights": ["Quality", "Safety", "Care"],
+    "highlights": [
+      { "label": "Quality Medicines", "icon": "pill" },
+      { "label": "Trusted Care", "icon": "shield" },
+      { "label": "Patient First", "icon": "heart" }
+    ],
     "stats": [
-      { "value": "+500", "label": "Products Available" },
-      { "value": "+1000", "label": "Happy Clients" },
-      { "value": "10+", "label": "Years Experience" },
-      { "value": "Pan India", "label": "Distribution" }
+      { "value": 500, "suffix": "+", "label": "Products" },
+      { "value": 10, "suffix": "K+", "label": "Healthcare Partners" },
+      { "value": 25, "suffix": "+", "label": "States Covered" },
+      { "value": 1, "suffix": "M+", "label": "Happy Customers" }
     ]
   },
   "about": {
@@ -31,11 +35,15 @@
     "description": "Based in South Delhi, Aurentis Lifesciences LLP is a trusted pharmaceutical partner committed to quality, safety, and accessibility. We specialise in nutraceuticals and therapeutic care across cardiovascular, orthopaedic, diabetic, dermatology, and neurology segments — bringing science-backed formulations to patients and healthcare professionals nationwide.",
     "cardTitle": "Pharmaceutical Excellence",
     "cardText": "Formulated with care. Delivered with trust. Serving India with uncompromising quality standards.",
-    "stats": [
-      { "value": "500+", "label": "Products" },
-      { "value": "1000+", "label": "Clients" },
-      { "value": "10+", "label": "Years" },
-      { "value": "Pan India", "label": "Reach" }
+    "focusTitle": "Therapeutic Focus",
+    "focusSubtitle": "Science-backed care across the specialties that matter most.",
+    "specialties": [
+      "Nutraceuticals",
+      "Cardiovascular",
+      "Orthopaedics",
+      "Diabetic Care",
+      "Dermatology",
+      "Neurology"
     ],
     "values": [
       {
