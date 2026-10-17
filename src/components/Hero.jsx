@@ -268,9 +268,22 @@ const CSS = `
     position: relative;
     width: 100%;
     max-width: 520px;
-    height: 460px;
+    aspect-ratio: 520 / 460;
     margin: 0 auto;
+    container-type: inline-size;
+    overflow: hidden;
     animation: stageIn 1.1s cubic-bezier(0.22, 1, 0.36, 1) 0.3s both;
+  }
+
+  .aur-stage-canvas {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 520px;
+    height: 460px;
+    transform: translateX(-50%);
+    transform: translateX(-50%) scale(min(1, 100cqi / 520px));
+    transform-origin: top center;
   }
 
   .aur-stage-bloom {
@@ -608,9 +621,15 @@ const CSS = `
   @media (prefers-reduced-motion: reduce) {
     .aur-reveal,
     .aur-hero h1 .ln,
+    .aur-stats {
+      animation: none !important;
+      transition: none !important;
+      opacity: 1 !important;
+      transform: none !important;
+    }
+
     .aur-hero-badge,
     .aur-stage,
-    .aur-stats,
     .aur-capsule-wrap,
     .aur-orbit-track,
     .aur-orbit-node,
@@ -623,23 +642,32 @@ const CSS = `
     .aur-ped-glow {
       animation: none !important;
       transition: none !important;
-      opacity: 1 !important;
-      transform: none !important;
     }
   }
 
   @media (max-width: 980px) {
     .aur-hero {
-      padding: 92px 0 36px;
+      min-height: auto;
+      padding: 100px 0 28px;
     }
 
     .aur-hero-shell {
-      padding: 0 24px;
+      padding-left: max(20px, env(safe-area-inset-left));
+      padding-right: max(20px, env(safe-area-inset-right));
     }
 
     .aur-hero-grid {
       grid-template-columns: 1fr;
       text-align: center;
+      gap: 8px;
+    }
+
+    .aur-hero h1 {
+      font-size: clamp(24px, 7.4vw, 52px);
+    }
+
+    .aur-hero h1 .ln {
+      white-space: nowrap;
     }
 
     .aur-hero-badge,
@@ -658,16 +686,23 @@ const CSS = `
       justify-content: center;
     }
 
+    .aur-hero-feats {
+      gap: 14px 22px;
+    }
+
     .aur-stage {
-      height: 400px;
-      max-width: 420px;
-      margin-top: 8px;
+      margin-top: 18px;
+    }
+
+    .aur-stat {
+      text-align: left;
     }
 
     .aur-stats {
       grid-template-columns: 1fr 1fr;
       border-radius: 28px;
       padding: 12px 6px;
+      margin-top: 16px;
     }
 
     .aur-stat:nth-child(2)::after {
@@ -679,38 +714,106 @@ const CSS = `
     }
   }
 
-  @media (max-width: 560px) {
+  @media (max-width: 640px) {
+    .aur-hero {
+      padding: 100px 0 max(24px, env(safe-area-inset-bottom));
+    }
+
+    .aur-hero-shell {
+      padding-left: max(16px, env(safe-area-inset-left));
+      padding-right: max(16px, env(safe-area-inset-right));
+    }
+
+    .aur-hero-badge {
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      gap: 8px;
+      padding: 7px 12px 7px 10px;
+      margin-bottom: 14px;
+    }
+
+    .aur-hero h1 {
+      letter-spacing: 0.015em;
+      line-height: 1.08;
+      margin-bottom: 12px;
+    }
+
+    .aur-hero-rule {
+      margin-bottom: 14px;
+    }
+
+    .aur-hero-copy {
+      font-size: 14px;
+      line-height: 1.65;
+      margin-bottom: 16px;
+    }
+
     .aur-hero-feats {
       flex-direction: column;
       align-items: center;
-      gap: 14px;
+      gap: 12px;
+      margin-bottom: 18px;
     }
 
     .aur-hero-actions {
       flex-direction: column;
+      align-items: stretch;
+      width: min(100%, 340px);
+      margin-inline: auto;
+      gap: 10px;
+    }
+
+    .aur-btn-primary,
+    .aur-btn-ghost {
+      justify-content: center;
+      width: 100%;
+      min-height: 48px;
+      padding: 14px 18px;
     }
 
     .aur-stats {
-      grid-template-columns: 1fr;
       border-radius: 24px;
+      padding: 4px;
+      margin-top: 12px;
+    }
+
+    .aur-stat {
+      flex-direction: column;
+      text-align: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 14px 8px;
     }
 
     .aur-stat:not(:last-child)::after {
       display: none;
     }
 
+    .aur-stat:nth-child(odd) {
+      border-right: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
     .aur-stat:nth-child(-n+2) {
-      border-bottom: 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
 
-    .aur-stat:not(:last-child) {
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    .aur-stat-ico {
+      width: 44px;
+      height: 44px;
     }
 
-    .aur-stage {
-      height: 380px;
-      transform: scale(0.86);
-      transform-origin: top center;
+    .aur-stat-ico svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    .aur-stat-num {
+      font-size: 22px;
+    }
+
+    .aur-stat-lbl {
+      font-size: 12px;
+      line-height: 1.3;
     }
   }
 `
@@ -953,6 +1056,7 @@ export default function Hero() {
           </div>
 
           <div className="aur-stage" aria-hidden="true">
+            <div className="aur-stage-canvas">
             <div className="aur-stage-bloom" />
 
             <div className="aur-orbit-track t2">
@@ -984,6 +1088,7 @@ export default function Hero() {
               <div className="aur-ped-ring r1" />
               <div className="aur-ped-ring r2" />
               <div className="aur-ped-ring r3" />
+            </div>
             </div>
           </div>
         </div>

@@ -32,7 +32,7 @@
   "about": {
     "badge": "Who We Are",
     "heading": "Aurentis Lifesciences LLP",
-    "description": "Based in South Delhi, Aurentis Lifesciences LLP is a trusted pharmaceutical partner committed to quality, safety, and accessibility. We specialise in nutraceuticals and therapeutic care across cardiovascular, orthopaedic, diabetic, dermatology, and neurology segments — bringing science-backed formulations to patients and healthcare professionals nationwide.",
+    "description": "A trusted pharmaceutical partner committed to quality, safety, and accessibility. We specialise in nutraceuticals and therapeutic care across key healthcare segments nationwide.",
     "cardTitle": "Pharmaceutical Excellence",
     "cardText": "Formulated with care. Delivered with trust. Serving India with uncompromising quality standards.",
     "focusTitle": "Therapeutic Focus",
@@ -48,15 +48,15 @@
     "values": [
       {
         "title": "Quality Assured",
-        "description": "Every formulation follows rigorous quality checks so patients receive safe, consistent, and reliable care."
+        "description": "Rigorous quality checks for safe and reliable formulations."
       },
       {
         "title": "Patient First",
-        "description": "We design products around real clinical needs — making access simple, affordable, and dependable."
+        "description": "Solutions designed around real clinical needs."
       },
       {
         "title": "Natural & Safe",
-        "description": "Science-backed nutraceuticals and therapies crafted with a focus on purity, safety, and long-term wellness."
+        "description": "Science-backed care with a focus on purity and wellness."
       }
     ]
   },
