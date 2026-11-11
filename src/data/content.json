@@ -9,164 +9,86 @@
       { "label": "Products", "href": "#products" },
       { "label": "Contact", "href": "#contact" }
     ],
-    "cta": "Call Us"
+    "cta": "Call Us",
+    "phoneHref": "tel:+919811814126"
   },
   "hero": {
-    "tagline": "Health. Care. Trust.",
-    "headline": ["MAKING QUALITY", "PHARMA ACCESS", "EASY & TRUSTED"],
-    "subheadline": "Aurentis Lifesciences LLP delivers trusted pharmaceutical and nutraceutical care across India — making quality medicines accessible, reliable, and patient-first for every household we serve.",
-    "cta_primary": "Explore Products",
-    "cta_secondary": "About Us",
-    "highlights": [
-      { "label": "Quality Medicines", "icon": "pill" },
-      { "label": "Trusted Care", "icon": "shield" },
-      { "label": "Patient First", "icon": "heart" }
+    "headline": [
+      "Science-Backed",
+      "Therapeutic Nutrition",
+      "& Healthcare Innovations"
     ],
-    "stats": [
-      { "value": 500, "suffix": "+", "label": "Products" },
-      { "value": 10, "suffix": "K+", "label": "Healthcare Partners" },
-      { "value": 25, "suffix": "+", "label": "States Covered" },
-      { "value": 1, "suffix": "M+", "label": "Happy Customers" }
+    "subheadline": "Dedicated to high-purity, research-driven formulations engineered for cellular protection, organ health, and advanced therapeutic care.",
+    "cta_primary": "Explore Formulations",
+    "cta_secondary": "Partner With Us",
+    "focusHeading": "Core Therapeutic Focus Areas",
+    "focus": [
+      {
+        "title": "Targeted Liver Care",
+        "description": "Advanced amino acid and protein formulations designed for hepatocyte recovery and metabolic balance."
+      },
+      {
+        "title": "Cellular Antioxidant Defense",
+        "description": "Premium Tocopherol and Omega-3 combinations crafted to combat oxidative stress and safeguard vital organs."
+      },
+      {
+        "title": "Expanding Portfolio",
+        "description": "Continuously innovating specialized formulations to address evolving clinical needs across key therapeutic segments."
+      }
+    ],
+    "badges": [
+      "FSSAI Approved",
+      "WHO-GMP Quality Standards",
+      "Clean Label Formulations",
+      "High Bioavailability"
     ]
   },
   "about": {
     "badge": "Who We Are",
-    "heading": "Aurentis Lifesciences LLP",
-    "description": "A trusted pharmaceutical partner committed to quality, safety, and accessibility. We specialise in nutraceuticals and therapeutic care across key healthcare segments nationwide.",
-    "cardTitle": "Pharmaceutical Excellence",
-    "cardText": "Formulated with care. Delivered with trust. Serving India with uncompromising quality standards.",
-    "focusTitle": "Therapeutic Focus",
-    "focusSubtitle": "Science-backed care across the specialties that matter most.",
-    "specialties": [
-      "Nutraceuticals",
-      "Cardiovascular",
-      "Orthopaedics",
-      "Diabetic Care",
-      "Dermatology",
-      "Neurology"
+    "headingLead": "About Aurentis Lifesciences —",
+    "headingAccent": "Elevating Human Health Through Scientific Precision & Uncompromised Quality.",
+    "paragraphs": [
+      "At Aurentis Lifesciences LLP, we are committed to transforming modern healthcare through research-backed, high-purity nutraceutical solutions.",
+      "Founded on the principles of clinical excellence, uncompromised purity, and scientific integrity, we bridge the gap between advanced medical research and therapeutic wellness. We specialize in developing targeted health formulations—starting with specialized Liver Protection, Cellular Regeneration, and Antioxidant Support. Every formulation under the Aurentis umbrella is produced using top-tier active ingredients in strict compliance with international quality standards, WHO-GMP guidelines, and FSSAI safety norms.",
+      "As a dynamic and forward-looking pharmaceutical & nutraceutical enterprise, we are continually expanding our pipeline to bring innovative, science-driven health solutions to doctors, patients, and healthcare partners across the nation."
     ],
-    "values": [
-      {
-        "title": "Quality Assured",
-        "description": "Rigorous quality checks for safe and reliable formulations."
-      },
-      {
-        "title": "Patient First",
-        "description": "Solutions designed around real clinical needs."
-      },
-      {
-        "title": "Natural & Safe",
-        "description": "Science-backed care with a focus on purity and wellness."
-      }
-    ]
+    "quote": "\"Aurentis Lifesciences is committed to crafting premium, science-backed therapeutic formulations that restore health, protect vital organs, and inspire clinical trust.\""
   },
   "products": {
-    "badge": "Our Range",
-    "heading": "Premium Healthcare Products",
-    "subheading": "Carefully curated nutraceuticals and therapeutics, crafted to support immunity, heart health, strength, skin wellness, and overall well-being.",
-    "filters": [
-      "All",
-      "Nutraceuticals",
-      "Cardiovascular",
-      "Orthopaedics",
-      "Diabetic Care",
-      "Dermatology",
-      "Neurology"
-    ],
-    "cta": "Enquire Now",
-    "trust": [
-      {
-        "title": "Quality Assured",
-        "text": "Every batch tested for purity and safety."
-      },
-      {
-        "title": "Trusted by Experts",
-        "text": "Recommended by healthcare professionals."
-      },
-      {
-        "title": "Science Backed",
-        "text": "Formulations grounded in clinical research."
-      },
-      {
-        "title": "Made for India",
-        "text": "Built around Indian health needs."
-      }
-    ],
+    "heading": "Product Portfolio",
+    "labels": {
+      "name": "Product Name",
+      "category": "Category"
+    },
     "items": [
       {
-        "id": 1,
-        "name": "Immunity Booster",
-        "category": "Nutraceuticals",
-        "visual": "immunity",
-        "description": "Daily nutraceutical blend to strengthen natural defence and keep vitality steady through seasonal change.",
-        "tags": ["Immunity", "Daily Care", "Vitality"],
-        "badge": "Bestseller"
+        "name": "AURELIV™ Sachets",
+        "category": "Targeted Amino Acid & Liver Health Support",
+        "compositionLabel": "Composition (Per Serving)",
+        "composition": "Whey Protein Isolate 4.2g, L-Leucine 2.5g, L-Isoleucine 1.25g, L-Valine 1.25g"
       },
       {
-        "id": 2,
-        "name": "OmegaShield Capsules",
-        "category": "Cardiovascular",
-        "visual": "omega",
-        "description": "Essential omega support for heart health, circulation, and balanced lipids in everyday care.",
-        "tags": ["Heart Health", "Omega", "Circulation"],
-        "badge": "Popular"
-      },
-      {
-        "id": 3,
-        "name": "BoneMax Forte",
-        "category": "Orthopaedics",
-        "visual": "bone",
-        "description": "Advanced bone and joint nutrition to support strength, mobility, and active living.",
-        "tags": ["Bones", "Joints", "Mobility"],
-        "badge": "New"
-      },
-      {
-        "id": 4,
-        "name": "GlucoBalance Pro",
-        "category": "Diabetic Care",
-        "visual": "gluco",
-        "description": "Specialised diabetic-care formula to complement glucose management and everyday energy.",
-        "tags": ["Glucose", "Metabolic", "Energy"],
-        "badge": ""
-      },
-      {
-        "id": 5,
-        "name": "DermaGlow Collagen",
-        "category": "Dermatology",
-        "visual": "derma",
-        "description": "Collagen support that nourishes skin from within for elasticity, hydration, and a healthy glow.",
-        "tags": ["Collagen", "Skin", "Glow"],
-        "badge": "Popular"
-      },
-      {
-        "id": 6,
-        "name": "NeuroCare Syrup",
-        "category": "Neurology",
-        "visual": "neuro",
-        "description": "Restorative syrup developed to support nerve health, cognitive calm, and daily balance.",
-        "tags": ["Nerves", "Cognition", "Balance"],
-        "badge": "New"
+        "name": "TOCOVITAL™ Tablets",
+        "category": "Advanced Antioxidant & Cellular Protection Formula",
+        "compositionLabel": "Composition",
+        "composition": "α-Tocopherol & Omega-3 Fatty Acids"
       }
     ]
   },
+  "contact": {
+    "heading": "Business Partnerships & Corporate Contact",
+    "partnerHeading": "Partner With Us",
+    "partnerText": "At Aurentis Lifesciences, we welcome strategic business inquiries, institutional distribution partnerships, and commercial collaborations to expand patient access to high-quality therapeutic products.",
+    "infoHeading": "Contact Information",
+    "addressLabel": "Corporate Address",
+    "address": "Aurentis Lifesciences LLP, 315, Saraswati Colony, Faridabad, Haryana - 121003, India",
+    "phoneLabel": "Contact Number",
+    "phoneDisplay": "+91 9811814126",
+    "phoneHref": "tel:+919811814126",
+    "emailLabel": "Business Email",
+    "email": "aurentislifesciences@gmail.com"
+  },
   "footer": {
-    "tagline": "Health. Care. Trust.",
-    "description": "Aurentis Lifesciences LLP is dedicated to making quality pharmaceutical access easy and trusted — serving patients, partners, and healthcare professionals across India.",
-    "address": "I-320, Gali No-13, Hari Nagar Extension, Jaitpur, Badarpur, South Delhi - 110044",
-    "phones": ["9811814126", "9818360612"],
-    "gstin": "06ACPFA0619N1Z5",
-    "links": {
-      "quick": [
-        { "label": "Home", "href": "#home" },
-        { "label": "About", "href": "#about" },
-        { "label": "Products", "href": "#products" },
-        { "label": "Contact", "href": "#contact" }
-      ]
-    },
-    "quickHeading": "Quick Links",
-    "contactHeading": "Contact Us",
-    "gstinLabel": "GSTIN",
-    "designed": "Designed for healthcare excellence",
-    "copyright": "© 2026 Aurentis Lifesciences LLP. All rights reserved."
+    "line": "Official Document • Aurentis Lifesciences LLP"
   }
 }

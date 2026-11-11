@@ -2,14 +2,15 @@ import { useEffect } from 'react'
 import content from '../data/content.json'
 
 const CSS = `
-  .aur-footer {
+  .aur-partner {
+    position: relative;
     background: linear-gradient(180deg, #0A2328, #1B4A52);
     color: #ffffff;
-    position: relative;
-    padding: 72px 64px 0;
+    padding: 72px 64px 48px;
+    scroll-margin-top: 88px;
   }
 
-  .aur-footer::before {
+  .aur-partner::before {
     content: '';
     position: absolute;
     top: 0;
@@ -19,80 +20,66 @@ const CSS = `
     background: linear-gradient(90deg, transparent, var(--gold), transparent);
   }
 
-  .aur-footer-grid {
+  .aur-partner-grid {
     max-width: 1280px;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: 1.4fr 0.8fr 1fr;
+    grid-template-columns: 1.15fr 0.85fr;
     gap: 48px;
-    padding-bottom: 40px;
+    align-items: start;
   }
 
-  .aur-footer-logo {
+  .aur-partner-logo {
     height: 50px;
     width: auto;
     border-radius: 8px;
     background: #ffffff;
-    margin-bottom: 16px;
-  }
-
-  .aur-footer-tagline {
-    display: block;
-    font-style: italic;
-    color: var(--gold);
-    margin-bottom: 14px;
-    font-size: 15px;
-  }
-
-  .aur-footer-desc {
-    color: rgba(247, 249, 249, 0.7);
-    font-size: 14px;
-    line-height: 1.75;
-    max-width: 420px;
     margin-bottom: 18px;
   }
 
-  .aur-gstin {
-    display: inline-block;
-    padding: 8px 14px;
-    border: 1px solid var(--gold);
-    border-radius: 8px;
-    color: var(--gold-light);
-    font-size: 12px;
-    letter-spacing: 0.06em;
-  }
-
-  .aur-footer h4 {
+  .aur-partner h2 {
     font-family: var(--font-display);
-    font-size: 20px;
-    margin-bottom: 18px;
-    color: var(--gold-light);
+    font-size: clamp(28px, 3vw, 40px);
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    color: #ffffff;
+    margin-bottom: 22px;
+    max-width: 640px;
+    overflow-wrap: break-word;
   }
 
-  .aur-footer-links {
+  .aur-partner h3 {
+    font-family: var(--font-display);
+    font-size: clamp(20px, 2vw, 26px);
+    font-weight: 600;
+    color: var(--gold-light);
+    margin-bottom: 12px;
+    line-height: 1.3;
+  }
+
+  .aur-partner-copy {
+    color: rgba(247, 249, 249, 0.78);
+    font-size: 15px;
+    line-height: 1.75;
+    max-width: 640px;
+    overflow-wrap: break-word;
+  }
+
+  .aur-contact-list {
     display: flex;
     flex-direction: column;
-    gap: 12px;
-  }
-
-  .aur-footer-links a {
-    color: rgba(247, 249, 249, 0.78);
-    font-size: 14px;
-    transition: color 0.2s ease;
-  }
-
-  .aur-footer-links a:hover {
-    color: var(--light-teal);
+    gap: 16px;
   }
 
   .aur-contact-row {
     display: flex;
     gap: 12px;
     align-items: flex-start;
-    margin-bottom: 14px;
     color: rgba(247, 249, 249, 0.78);
     font-size: 14px;
     line-height: 1.6;
+    min-width: 0;
   }
 
   .aur-contact-row svg {
@@ -103,31 +90,56 @@ const CSS = `
     stroke-width: 1.7;
   }
 
+  .aur-contact-row a {
+    overflow-wrap: anywhere;
+  }
+
   .aur-contact-row a:hover {
     color: var(--light-teal);
   }
 
-  .aur-footer-bottom {
+  .aur-contact-text {
+    min-width: 0;
+    overflow-wrap: break-word;
+  }
+
+  .aur-contact-text b {
+    display: block;
+    color: #ffffff;
+    font-weight: 600;
+    margin-bottom: 2px;
+  }
+
+  .aur-footer {
+    background: #0A2328;
+    color: rgba(247, 249, 249, 0.72);
+    border-top: 1px solid rgba(42, 157, 143, 0.2);
+    padding: 18px 24px 24px;
+  }
+
+  .aur-footer p {
     max-width: 1280px;
     margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    gap: 12px;
-    flex-wrap: wrap;
-    padding: 18px 0 24px;
-    border-top: 1px solid rgba(42, 157, 143, 0.2);
-    font-size: 12px;
-    color: rgba(247, 249, 249, 0.5);
+    text-align: center;
+    font-size: 13px;
+    line-height: 1.6;
+    overflow-wrap: break-word;
   }
 
   @media (max-width: 980px) {
-    .aur-footer {
-      padding: 56px 24px 0;
+    .aur-partner {
+      padding: 56px 24px 40px;
     }
 
-    .aur-footer-grid {
+    .aur-partner-grid {
       grid-template-columns: 1fr;
       gap: 32px;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .aur-partner {
+      padding: 48px 16px 32px;
     }
   }
 `
@@ -159,51 +171,65 @@ function PhoneIcon() {
   )
 }
 
+function MailIcon() {
+  return (
+    <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+      <rect x="3" y="5" width="18" height="14" rx="2" />
+      <path d="M3 7l9 7 9-7" />
+    </svg>
+  )
+}
+
 export default function Footer() {
   useEffect(() => {
     injectStyles('aurentis-footer-styles', CSS)
   }, [])
 
+  const contact = content.contact
+
   return (
-    <footer className="aur-footer" id="contact">
-      <div className="aur-footer-grid">
-        <div>
-          <img src="/logo.jpeg" alt="" height="50" className="aur-footer-logo" />
-          <em className="aur-footer-tagline">{content.footer.tagline}</em>
-          <p className="aur-footer-desc">{content.footer.description}</p>
-          <div className="aur-gstin">
-            {content.footer.gstinLabel}: {content.footer.gstin}
+    <>
+      <section className="aur-partner" id="contact">
+        <div className="aur-partner-grid">
+          <div>
+            <img src="/logo.jpeg" alt="" height="50" className="aur-partner-logo" />
+            <h2>{contact.heading}</h2>
+            <h3>{contact.partnerHeading}</h3>
+            <p className="aur-partner-copy">{contact.partnerText}</p>
           </div>
-        </div>
 
-        <div>
-          <h4>{content.footer.quickHeading}</h4>
-          <div className="aur-footer-links">
-            {content.footer.links.quick.map((link) => (
-              <a key={link.href} href={link.href}>{link.label}</a>
-            ))}
-          </div>
-        </div>
-
-        <div>
-          <h4>{content.footer.contactHeading}</h4>
-          <div className="aur-contact-row">
-            <PinIcon />
-            <span>{content.footer.address}</span>
-          </div>
-          {content.footer.phones.map((phone) => (
-            <div className="aur-contact-row" key={phone}>
-              <PhoneIcon />
-              <a href={`tel:${phone}`}>{phone}</a>
+          <div>
+            <h3>{contact.infoHeading}</h3>
+            <div className="aur-contact-list">
+              <div className="aur-contact-row">
+                <PinIcon />
+                <span className="aur-contact-text">
+                  <b>{contact.addressLabel}:</b>
+                  {contact.address}
+                </span>
+              </div>
+              <div className="aur-contact-row">
+                <PhoneIcon />
+                <span className="aur-contact-text">
+                  <b>{contact.phoneLabel}:</b>
+                  <a href={contact.phoneHref}>{contact.phoneDisplay}</a>
+                </span>
+              </div>
+              <div className="aur-contact-row">
+                <MailIcon />
+                <span className="aur-contact-text">
+                  <b>{contact.emailLabel}:</b>
+                  <a href={`mailto:${contact.email}`}>{contact.email}</a>
+                </span>
+              </div>
             </div>
-          ))}
+          </div>
         </div>
-      </div>
+      </section>
 
-      <div className="aur-footer-bottom">
-        <span>{content.footer.copyright}</span>
-        <span>{content.footer.designed}</span>
-      </div>
-    </footer>
+      <footer className="aur-footer">
+        <p>{content.footer.line}</p>
+      </footer>
+    </>
   )
 }

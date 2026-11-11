@@ -257,7 +257,7 @@ export default function Navbar() {
       <style>{CSS}</style>
       <div className="aur-nav-inner">
         <a href="#home" className="aur-nav-brand" onClick={close}>
-          <img src="/logo.jpeg" alt="Aurentis Lifesciences" className="aur-nav-logo" />
+          <img src="/logo.jpeg" alt="Aurentis Lifesciences LLP" className="aur-nav-logo" />
         </a>
 
         <nav className={`aur-nav-links${open ? ' open' : ''}`}>
@@ -272,13 +272,13 @@ export default function Navbar() {
               {active === link.href ? <span className="aur-nav-indicator" /> : null}
             </a>
           ))}
-          <a href={`tel:${content.footer.phones[0]}`} className="aur-nav-cta mobile" onClick={close}>
+          <a href={content.nav.phoneHref} className="aur-nav-cta mobile" onClick={close}>
             <PhoneIcon />
             {content.nav.cta}
           </a>
         </nav>
 
-        <a href={`tel:${content.footer.phones[0]}`} className="aur-nav-cta desktop">
+        <a href={content.nav.phoneHref} className="aur-nav-cta desktop">
           <PhoneIcon />
           {content.nav.cta}
         </a>
