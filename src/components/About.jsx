@@ -73,46 +73,9 @@ const CSS = `
   .ab {
     position: relative;
     overflow: hidden;
-    background: #fbfcfb;
-    color: #122028;
+    background: #E7F4FC;
+    color: #1D3651;
     scroll-margin-top: 88px;
-  }
-
-  .ab-blob {
-    position: absolute;
-    pointer-events: none;
-    z-index: 0;
-  }
-
-  .ab-blob-a {
-    width: 420px;
-    height: 320px;
-    top: -80px;
-    right: -60px;
-    background: radial-gradient(circle, rgba(198, 228, 218, 0.5), transparent 68%);
-    animation: abDrift 9s ease-in-out infinite;
-  }
-
-  .ab-blob-b {
-    width: 360px;
-    height: 280px;
-    left: -90px;
-    bottom: 120px;
-    background: radial-gradient(circle, rgba(214, 232, 224, 0.6), transparent 70%);
-    animation: abDrift 11s ease-in-out infinite reverse;
-  }
-
-  .ab-wave {
-    position: absolute;
-    right: -70px;
-    bottom: -70px;
-    width: 460px;
-    height: 190px;
-    border-radius: 100% 0 0 0;
-    background: linear-gradient(135deg, rgba(190, 222, 207, 0.85), rgba(214, 236, 226, 0.5));
-    pointer-events: none;
-    z-index: 0;
-    animation: abDrift 10s ease-in-out infinite;
   }
 
   .ab-shell {
@@ -153,9 +116,9 @@ const CSS = `
     align-items: center;
     padding: 5px 14px;
     border-radius: 999px;
-    border: 1px solid #cfe0d8;
-    background: #f3f9f6;
-    color: #14633f;
+    border: 1px solid #A17C2D;
+    background: transparent;
+    color: #A17C2D;
     font-size: 13px;
     font-weight: 600;
     letter-spacing: 0.01em;
@@ -165,7 +128,7 @@ const CSS = `
   .ab-kicker-line {
     width: 92px;
     height: 1px;
-    background: #c9d6d1;
+    background: #A17C2D;
     transform: scaleX(0);
     transform-origin: left center;
   }
@@ -180,7 +143,7 @@ const CSS = `
     font-size: clamp(22px, 2.4vw, 33px);
     line-height: 1.22;
     letter-spacing: -0.025em;
-    color: #121a22;
+    color: #1D3651;
     margin: 0 0 16px;
     overflow-wrap: break-word;
   }
@@ -199,7 +162,7 @@ const CSS = `
     display: block;
     font-style: normal;
     font-weight: 700;
-    color: #15603f;
+    color: #A17C2D;
     margin-top: 4px;
   }
 
@@ -207,7 +170,7 @@ const CSS = `
     width: 64px;
     height: 3px;
     border-radius: 3px;
-    background: #15603f;
+    background: #A17C2D;
     transform: scaleX(0);
     transform-origin: left center;
   }
@@ -226,7 +189,7 @@ const CSS = `
   .ab-qline {
     position: absolute;
     inset: 0;
-    border: 1.5px solid #1d6b4b;
+    border: 1.5px solid #A17C2D;
     border-radius: 34px;
     transform: translate(14px, 10px) skewX(-14deg);
     opacity: 0.75;
@@ -236,8 +199,8 @@ const CSS = `
     position: relative;
     border-radius: 34px;
     overflow: hidden;
-    background: linear-gradient(135deg, #0c6244 0%, #084a33 55%, #063b29 100%);
-    box-shadow: 0 22px 44px -22px rgba(6, 59, 41, 0.6);
+    background: #FFFFFF;
+    box-shadow: 0 22px 44px -22px rgba(0, 0, 0, 0.45);
     transform: skewX(-14deg);
   }
 
@@ -270,7 +233,7 @@ const CSS = `
     width: 6px;
     height: 6px;
     border-radius: 50%;
-    background: #15603f;
+    background: #A17C2D;
     margin-right: 8px;
     animation: abPulse 1.8s ease-in-out infinite;
   }
@@ -287,7 +250,7 @@ const CSS = `
     font-size: 52px;
     line-height: 0.8;
     height: 26px;
-    color: #cfe6d6;
+    color: #A17C2D;
     margin-bottom: 6px;
   }
 
@@ -298,7 +261,7 @@ const CSS = `
     font-weight: 600;
     line-height: 1.4;
     letter-spacing: -0.015em;
-    color: #f4f8ef;
+    color: #1D3651;
     overflow-wrap: break-word;
   }
 
@@ -317,7 +280,7 @@ const CSS = `
     top: 0.08em;
     width: 2px;
     height: 0.95em;
-    background: #e3c776;
+    background: #A17C2D;
     animation: abBlink 0.9s steps(1) infinite;
   }
 
@@ -337,7 +300,7 @@ const CSS = `
     align-items: flex-start;
     gap: 14px;
     padding: 2px 22px;
-    border-left: 1px solid #dbe6e1;
+    border-left: 1px solid rgba(29, 54, 81, 0.16);
   }
 
   .ab-item:first-child {
@@ -356,10 +319,10 @@ const CSS = `
     display: grid;
     place-items: center;
     border-radius: 16px;
-    border: 1px solid #d5e7de;
-    background: linear-gradient(145deg, #eef7f2, #e4f1ea);
-    color: #15603f;
-    box-shadow: 0 8px 18px -12px rgba(21, 96, 63, 0.5);
+    border: 1px solid #A17C2D;
+    background: transparent;
+    color: #A17C2D;
+    box-shadow: none;
     transition: transform 0.35s ease, box-shadow 0.35s ease;
   }
 
@@ -375,14 +338,14 @@ const CSS = `
 
   .ab-item:hover .ab-ico {
     transform: translateY(-4px) rotate(-3deg);
-    box-shadow: 0 14px 22px -12px rgba(21, 96, 63, 0.55);
+    box-shadow: 0 14px 22px -12px rgba(161, 124, 45, 0.45);
   }
 
   .ab-item h3 {
     margin: 2px 0 6px;
     font-size: 17px;
     font-weight: 700;
-    color: #0f1c18;
+    color: #1D3651;
     letter-spacing: -0.01em;
   }
 
@@ -390,7 +353,7 @@ const CSS = `
     margin: 0;
     font-size: 13.5px;
     line-height: 1.55;
-    color: #3a4743;
+    color: #1D3651;
   }
 
   /* ---------- growth bar ---------- */
@@ -402,15 +365,15 @@ const CSS = `
     border-radius: 30px;
     position: relative;
     overflow: hidden;
-    border: 1px solid #cfe5da;
-    background: linear-gradient(90deg, #eef7f2, #f6fbf8 60%, #f1f8f4);
+    border: 1px solid rgba(29, 54, 81, 0.1);
+    background: #FFFFFF;
   }
 
   .ab-growth-ico {
     flex: 0 0 auto;
     width: 42px;
     height: 42px;
-    color: #15603f;
+    color: #A17C2D;
     margin-left: 24px;
   }
 
@@ -423,7 +386,7 @@ const CSS = `
     flex: 0 0 auto;
     width: 1px;
     align-self: stretch;
-    background: #b9d3c7;
+    background: rgba(29, 54, 81, 0.16);
   }
 
   .ab-growth h3 {
@@ -432,7 +395,7 @@ const CSS = `
     min-width: 140px;
     font-size: 20px;
     font-weight: 700;
-    color: #0f1c18;
+    color: #1D3651;
     letter-spacing: -0.01em;
   }
 
@@ -440,7 +403,7 @@ const CSS = `
     margin: 0;
     font-size: 14.5px;
     line-height: 1.6;
-    color: #2d3a36;
+    color: #1D3651;
   }
 
   .ab-bar {
@@ -471,7 +434,7 @@ const CSS = `
     position: absolute;
     inset: -10px;
     border-radius: 50%;
-    background: radial-gradient(circle, rgba(21, 96, 63, 0.18), transparent 70%);
+    background: radial-gradient(circle, rgba(161, 124, 45, 0.22), transparent 70%);
     animation: abRing 2.6s ease-in-out infinite;
   }
 
@@ -539,13 +502,8 @@ const CSS = `
   }
 
   @keyframes abPulse {
-    0%, 100% { box-shadow: 0 0 0 0 rgba(21, 96, 63, 0.45); }
-    50% { box-shadow: 0 0 0 6px rgba(21, 96, 63, 0); }
-  }
-
-  @keyframes abDrift {
-    0%, 100% { transform: translate3d(0, 0, 0); }
-    50% { transform: translate3d(0, -14px, 0); }
+    0%, 100% { box-shadow: 0 0 0 0 rgba(161, 124, 45, 0.45); }
+    50% { box-shadow: 0 0 0 6px rgba(161, 124, 45, 0); }
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -560,8 +518,6 @@ const CSS = `
       animation: none !important;
     }
 
-    .ab-blob,
-    .ab-wave,
     .ab-qfloat,
     .ab-qbox::after,
     .ab-growth::after,
@@ -596,6 +552,11 @@ const CSS = `
   }
 
   @media (max-width: 980px) {
+    .ab-shell {
+      padding-top: 60px;
+      padding-bottom: 76px;
+    }
+
     .ab-top {
       grid-template-columns: 1fr;
       gap: 36px;
@@ -604,7 +565,7 @@ const CSS = `
 
   @media (max-width: 680px) {
     .ab-shell {
-      padding: 48px 18px 56px;
+      padding: 64px 18px 80px;
     }
 
     .ab-qbox,
@@ -759,9 +720,6 @@ export default function About() {
   return (
     <section className="ab" id="about" ref={wrapRef}>
       <style>{CSS}</style>
-      <div className="ab-blob ab-blob-a" />
-      <div className="ab-blob ab-blob-b" />
-      <div className="ab-wave" />
 
       <div className="ab-shell">
         <div className="ab-top">

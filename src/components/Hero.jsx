@@ -17,9 +17,9 @@ const CSS = `
     display: flex;
     flex-direction: column;
     background:
-      radial-gradient(ellipse 55% 50% at 78% 38%, rgba(42, 157, 143, 0.28), transparent 62%),
-      radial-gradient(ellipse 35% 40% at 12% 78%, rgba(201, 168, 76, 0.07), transparent 58%),
-      linear-gradient(165deg, #061418 0%, #0A2328 42%, #12363C 72%, #061418 100%);
+      radial-gradient(ellipse 55% 50% at 78% 38%, rgba(161, 124, 45, 0.08), transparent 62%),
+      radial-gradient(ellipse 35% 40% at 12% 78%, rgba(255, 255, 255, 0.06), transparent 58%),
+      #1D3651;
     overflow: hidden;
     color: #ffffff;
     padding: 90px 0 6px;
@@ -28,8 +28,8 @@ const CSS = `
   .aur-hero-particle {
     position: absolute;
     border-radius: 50%;
-    background: rgba(120, 220, 210, 0.7);
-    box-shadow: 0 0 8px rgba(77, 184, 172, 0.55);
+    background: rgba(161, 124, 45, 0.75);
+    box-shadow: 0 0 8px rgba(161, 124, 45, 0.55);
     pointer-events: none;
     animation: particleDrift ease-in-out infinite;
     z-index: 0;
@@ -72,14 +72,14 @@ const CSS = `
     align-items: center;
     gap: 10px;
     padding: 8px 16px 8px 12px;
-    border: 1px solid #C9A84C;
+    border: 1px solid #A17C2D;
     border-radius: 999px;
-    background: rgba(10, 35, 40, 0.45);
+    background: rgba(29, 54, 81, 0.45);
     font-size: 11px;
     font-weight: 600;
     letter-spacing: 0.2em;
     text-transform: uppercase;
-    color: #D4AF37;
+    color: #A17C2D;
     margin-bottom: 18px;
     animation-delay: 0.12s;
   }
@@ -88,7 +88,7 @@ const CSS = `
     width: 16px;
     height: 16px;
     fill: none;
-    stroke: #4DB8AC;
+    stroke: #A17C2D;
     stroke-width: 1.7;
     flex-shrink: 0;
   }
@@ -119,12 +119,12 @@ const CSS = `
   .aur-hero h1 .ln:nth-child(3) { animation-delay: 0.5s; }
 
   .aur-hero-accent {
-    background: linear-gradient(90deg, #5EEAD4, #2A9D8F 55%, #7BE3D4);
+    background: linear-gradient(90deg, #d4b36a, #A17C2D 55%, #d4b36a);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
     text-shadow: none;
-    filter: drop-shadow(0 0 18px rgba(77, 184, 172, 0.45));
+    filter: drop-shadow(0 0 18px rgba(161, 124, 45, 0.45));
   }
 
   .aur-hero h1 em {
@@ -144,20 +144,20 @@ const CSS = `
   .aur-hero-rule span {
     flex: 1;
     height: 1px;
-    background: linear-gradient(90deg, #C9A84C, rgba(201, 168, 76, 0.15));
+    background: linear-gradient(90deg, #A17C2D, rgba(161, 124, 45, 0.15));
   }
 
   .aur-hero-rule span:last-child {
-    background: linear-gradient(90deg, rgba(201, 168, 76, 0.15), #C9A84C);
+    background: linear-gradient(90deg, rgba(161, 124, 45, 0.15), #A17C2D);
   }
 
   .aur-hero-rule i {
     width: 7px;
     height: 7px;
     margin: 0 8px;
-    background: #E8C97A;
+    background: #A17C2D;
     transform: rotate(45deg);
-    box-shadow: 0 0 10px rgba(232, 201, 122, 0.85);
+    box-shadow: 0 0 10px rgba(161, 124, 45, 0.85);
     flex-shrink: 0;
   }
 
@@ -165,7 +165,7 @@ const CSS = `
     max-width: 540px;
     font-size: 15px;
     line-height: 1.75;
-    color: rgba(247, 249, 249, 0.72);
+    color: rgba(255, 255, 255, 0.82);
     margin-bottom: 20px;
     animation-delay: 0.72s;
   }
@@ -194,9 +194,9 @@ const CSS = `
     border-radius: 50%;
     display: grid;
     place-items: center;
-    background: radial-gradient(circle at 40% 35%, rgba(42, 157, 143, 0.35), rgba(10, 35, 40, 0.85));
-    border: 1px solid rgba(77, 184, 172, 0.55);
-    box-shadow: 0 0 14px rgba(42, 157, 143, 0.25);
+    background: radial-gradient(circle at 40% 35%, rgba(161, 124, 45, 0.4), rgba(29, 54, 81, 0.9));
+    border: 1px solid rgba(161, 124, 45, 0.7);
+    box-shadow: 0 0 14px rgba(161, 124, 45, 0.28);
     animation: iconPulse 3.2s ease-in-out infinite;
   }
 
@@ -207,7 +207,7 @@ const CSS = `
     width: 18px;
     height: 18px;
     fill: none;
-    stroke: #ffffff;
+    stroke: #A17C2D;
     stroke-width: 1.7;
     stroke-linecap: round;
     stroke-linejoin: round;
@@ -236,9 +236,9 @@ const CSS = `
   .aur-btn-primary {
     position: relative;
     overflow: hidden;
-    background: linear-gradient(135deg, #2A9D8F 0%, #1B4A52 100%);
-    color: #ffffff;
-    box-shadow: 0 10px 28px rgba(42, 157, 143, 0.42);
+    background: #A17C2D;
+    color: #FFFFFF;
+    box-shadow: 0 10px 28px rgba(161, 124, 45, 0.42);
   }
 
   .aur-btn-primary::after {
@@ -252,7 +252,7 @@ const CSS = `
 
   .aur-btn-primary:hover {
     transform: translateY(-2px) scale(1.02);
-    box-shadow: 0 14px 34px rgba(42, 157, 143, 0.6);
+    box-shadow: 0 14px 34px rgba(161, 124, 45, 0.6);
   }
 
   .aur-btn-ghost {
@@ -294,7 +294,7 @@ const CSS = `
     height: 340px;
     transform: translate(-50%, -50%);
     border-radius: 50%;
-    background: radial-gradient(circle, rgba(42, 157, 143, 0.42), transparent 68%);
+    background: radial-gradient(circle, rgba(161, 124, 45, 0.1), transparent 68%);
     filter: blur(6px);
     animation: bloomPulse 4s ease-in-out infinite;
   }
@@ -303,10 +303,10 @@ const CSS = `
     position: absolute;
     left: 50%;
     top: 42%;
-    border: 1px solid rgba(77, 184, 172, 0.28);
+    border: 1px solid rgba(161, 124, 45, 0.4);
     border-radius: 50%;
     transform: translate(-50%, -50%);
-    box-shadow: 0 0 18px rgba(42, 157, 143, 0.08);
+    box-shadow: 0 0 18px rgba(161, 124, 45, 0.12);
   }
 
   .aur-orbit-track.t1 {
@@ -318,7 +318,7 @@ const CSS = `
   .aur-orbit-track.t2 {
     width: 390px;
     height: 390px;
-    border-color: rgba(77, 184, 172, 0.16);
+    border-color: rgba(161, 124, 45, 0.22);
     animation: orbitSpinRev 32s linear infinite;
   }
 
@@ -332,9 +332,9 @@ const CSS = `
     border-radius: 50%;
     display: grid;
     place-items: center;
-    background: rgba(8, 28, 32, 0.88);
-    border: 1px solid rgba(77, 184, 172, 0.7);
-    box-shadow: 0 0 16px rgba(42, 157, 143, 0.45);
+    background: #1D3651;
+    border: 1px solid #A17C2D;
+    box-shadow: 0 0 16px rgba(161, 124, 45, 0.45);
     animation: counterSpin 22s linear infinite;
   }
 
@@ -349,7 +349,7 @@ const CSS = `
     width: 16px;
     height: 16px;
     fill: none;
-    stroke: #7BE3D4;
+    stroke: #A17C2D;
     stroke-width: 1.7;
     stroke-linecap: round;
     stroke-linejoin: round;
@@ -374,18 +374,18 @@ const CSS = `
     box-shadow:
       inset -14px 0 22px rgba(0, 0, 0, 0.28),
       inset 12px 0 18px rgba(255, 255, 255, 0.22),
-      0 18px 50px rgba(10, 35, 40, 0.45),
-      0 0 56px rgba(42, 157, 143, 0.55);
+      0 18px 50px rgba(29, 54, 81, 0.45),
+      0 0 56px rgba(161, 124, 45, 0.4);
   }
 
   .aur-cap-top {
     height: 50%;
-    background: linear-gradient(145deg, #7BE3D4 0%, #2A9D8F 32%, #163E44 72%, #0A2A30 100%);
+    background: linear-gradient(145deg, #6e8eaf 0%, #1D3651 38%, #12263c 100%);
   }
 
   .aur-cap-bot {
     height: 50%;
-    background: linear-gradient(145deg, #F6E7A8 0%, #E8C97A 22%, #C9A84C 58%, #8F7324 100%);
+    background: linear-gradient(145deg, #e4c77a 0%, #A17C2D 48%, #6e5418 100%);
   }
 
   .aur-cap-seam {
@@ -439,7 +439,7 @@ const CSS = `
     width: 280px;
     height: 70px;
     transform: translateX(-50%);
-    background: radial-gradient(ellipse, rgba(77, 184, 172, 0.55), transparent 70%);
+    background: radial-gradient(ellipse, rgba(161, 124, 45, 0.55), transparent 70%);
     filter: blur(8px);
     animation: pedPulse 3.2s ease-in-out infinite;
   }
@@ -449,10 +449,10 @@ const CSS = `
     left: 50%;
     border-radius: 50%;
     transform: translateX(-50%) scaleY(0.26);
-    border: 2px solid rgba(94, 234, 212, 0.95);
+    border: 2px solid rgba(161, 124, 45, 0.95);
     box-shadow:
-      0 0 24px rgba(77, 184, 172, 0.95),
-      inset 0 0 16px rgba(77, 184, 172, 0.35);
+      0 0 24px rgba(161, 124, 45, 0.85),
+      inset 0 0 16px rgba(161, 124, 45, 0.35);
     animation: pedPulse 3.2s ease-in-out infinite;
   }
 
@@ -469,7 +469,7 @@ const CSS = `
     background: rgba(8, 28, 34, 0.72);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
-    border: 1px solid rgba(77, 184, 172, 0.22);
+    border: 1px solid rgba(161, 124, 45, 0.28);
     border-radius: 40px;
     padding: 22px 8px;
     box-shadow: 0 16px 40px rgba(0, 0, 0, 0.22);
@@ -508,7 +508,7 @@ const CSS = `
 
   .aur-stat:hover .aur-stat-ico {
     transform: scale(1.08);
-    box-shadow: 0 0 22px rgba(42, 157, 143, 0.55);
+    box-shadow: 0 0 22px rgba(161, 124, 45, 0.55);
   }
 
   .aur-stat-ico {
@@ -518,8 +518,8 @@ const CSS = `
     display: grid;
     place-items: center;
     flex-shrink: 0;
-    background: radial-gradient(circle at 40% 35%, rgba(42, 157, 143, 0.55), rgba(10, 35, 40, 0.95));
-    box-shadow: 0 0 18px rgba(42, 157, 143, 0.35);
+    background: radial-gradient(circle at 40% 35%, rgba(161, 124, 45, 0.55), #1D3651);
+    box-shadow: 0 0 18px rgba(161, 124, 45, 0.35);
     animation: iconPulse 3.4s ease-in-out infinite;
     transition: transform 0.25s ease, box-shadow 0.25s ease;
   }
@@ -532,7 +532,7 @@ const CSS = `
     width: 22px;
     height: 22px;
     fill: none;
-    stroke: #ffffff;
+    stroke: #A17C2D;
     stroke-width: 1.7;
     stroke-linecap: round;
     stroke-linejoin: round;
@@ -548,7 +548,7 @@ const CSS = `
   }
 
   .aur-stat:hover .aur-stat-num {
-    text-shadow: 0 0 16px rgba(94, 234, 212, 0.55);
+    text-shadow: 0 0 16px rgba(161, 124, 45, 0.55);
   }
 
   .aur-stat-lbl {
@@ -604,8 +604,8 @@ const CSS = `
   }
 
   @keyframes iconPulse {
-    0%, 100% { box-shadow: 0 0 12px rgba(42, 157, 143, 0.28); }
-    50% { box-shadow: 0 0 20px rgba(42, 157, 143, 0.55); }
+    0%, 100% { box-shadow: 0 0 12px rgba(161, 124, 45, 0.28); }
+    50% { box-shadow: 0 0 20px rgba(161, 124, 45, 0.55); }
   }
 
   @keyframes particleDrift {
@@ -648,7 +648,7 @@ const CSS = `
   @media (max-width: 980px) {
     .aur-hero {
       min-height: 0;
-      padding: 112px 0 12px;
+      padding: 112px 0 36px;
     }
 
     .aur-hero-shell {
@@ -722,7 +722,7 @@ const CSS = `
 
   @media (max-width: 640px) {
     .aur-hero {
-      padding: 104px 0 max(10px, env(safe-area-inset-bottom));
+      padding: 104px 0 max(36px, env(safe-area-inset-bottom));
     }
 
     .aur-hero-shell {

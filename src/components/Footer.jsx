@@ -4,7 +4,7 @@ import content from '../data/content.json'
 const CSS = `
   .aur-partner {
     position: relative;
-    background: linear-gradient(180deg, #0A2328, #1B4A52);
+    background: #1D3651;
     color: #ffffff;
     padding: 56px 0 40px;
     scroll-margin-top: 88px;
@@ -60,7 +60,7 @@ const CSS = `
   }
 
   .aur-partner-copy {
-    color: rgba(247, 249, 249, 0.8);
+    color: rgba(255, 255, 255, 0.86);
     font-size: 14px;
     line-height: 1.7;
     max-width: 560px;
@@ -77,7 +77,7 @@ const CSS = `
     display: flex;
     gap: 12px;
     align-items: flex-start;
-    color: rgba(247, 249, 249, 0.8);
+    color: rgba(255, 255, 255, 0.86);
     font-size: 14px;
     line-height: 1.6;
     min-width: 0;
@@ -112,9 +112,9 @@ const CSS = `
   }
 
   .aur-footer {
-    background: #0A2328;
-    color: rgba(247, 249, 249, 0.72);
-    border-top: 1px solid rgba(42, 157, 143, 0.2);
+    background: #1D3651;
+    color: rgba(255, 255, 255, 0.72);
+    border-top: 1px solid rgba(161, 124, 45, 0.35);
     padding: 16px 24px 20px;
   }
 
@@ -129,7 +129,7 @@ const CSS = `
 
   @media (max-width: 980px) {
     .aur-partner {
-      padding: 48px 0 36px;
+      padding: 72px 0 40px;
     }
 
     .aur-partner-grid {
@@ -141,7 +141,7 @@ const CSS = `
 
   @media (max-width: 640px) {
     .aur-partner {
-      padding: 40px 0 28px;
+      padding: 64px 0 32px;
     }
 
     .aur-partner-grid {

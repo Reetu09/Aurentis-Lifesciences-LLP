@@ -5,42 +5,8 @@ const CSS = `
   .fx {
     position: relative;
     overflow: hidden;
-    background: #fbfefc;
-    color: #1a1c1a;
-  }
-
-  .fx-blob,
-  .fx-wave {
-    position: absolute;
-    pointer-events: none;
-    z-index: 0;
-  }
-
-  .fx-blob-a {
-    width: 520px;
-    height: 360px;
-    top: -140px;
-    left: -100px;
-    background: radial-gradient(ellipse at 40% 40%, rgba(206, 232, 217, 0.95), transparent 68%);
-    animation: fxDrift 9s ease-in-out infinite;
-  }
-
-  .fx-blob-b {
-    width: 420px;
-    height: 260px;
-    top: -80px;
-    right: 18%;
-    background: radial-gradient(circle, rgba(255, 255, 255, 0.9), rgba(226, 240, 232, 0.35) 46%, transparent 70%);
-  }
-
-  .fx-wave {
-    right: -90px;
-    bottom: -80px;
-    width: 520px;
-    height: 210px;
-    border-radius: 100% 0 0 0;
-    background: linear-gradient(135deg, rgba(190, 224, 208, 0.85), rgba(218, 238, 228, 0.45));
-    animation: fxDrift 12s ease-in-out infinite reverse;
+    background: #FFFFFF;
+    color: #1D3651;
   }
 
   .fx-shell {
@@ -65,7 +31,7 @@ const CSS = `
     width: 76px;
     height: 3px;
     border-radius: 3px;
-    background: linear-gradient(90deg, #14543c 0%, #3d8f6f 100%);
+    background: #A17C2D;
     margin: 0 0 16px;
     transform: scaleX(0);
     transform-origin: left center;
@@ -82,7 +48,7 @@ const CSS = `
     font-size: clamp(26px, 2.8vw, 40px);
     line-height: 1.15;
     letter-spacing: -0.03em;
-    color: #121412;
+    color: #1D3651;
     max-width: 100%;
     margin: 0;
   }
@@ -114,10 +80,10 @@ const CSS = `
     width: 56px;
     height: 56px;
     border-radius: 17px;
-    background: linear-gradient(160deg, #f1fbf6 0%, #d9f0e3 100%);
-    border: 1px solid #cfe8da;
-    box-shadow: 0 8px 16px -8px rgba(26, 104, 72, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.9);
-    color: #1a6848;
+    background: #FFFFFF;
+    border: 1px solid #A17C2D;
+    box-shadow: 0 8px 16px -8px rgba(29, 54, 81, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.9);
+    color: #A17C2D;
     display: grid;
     place-items: center;
     margin-bottom: 10px;
@@ -126,7 +92,7 @@ const CSS = `
 
   .fx-badge:hover .fx-badge-ico {
     transform: translateY(-4px);
-    box-shadow: 0 14px 22px -10px rgba(26, 104, 72, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.9);
+    box-shadow: 0 14px 22px -10px rgba(161, 124, 45, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.9);
   }
 
   .fx-badge-ico svg {
@@ -140,7 +106,7 @@ const CSS = `
     font-size: 12px;
     font-weight: 700;
     line-height: 1.35;
-    color: #1f2b26;
+    color: #1D3651;
     letter-spacing: -0.01em;
   }
 
@@ -148,7 +114,7 @@ const CSS = `
     width: 1px;
     height: 64px;
     margin-top: 2px;
-    background: #dfe6e2;
+    background: rgba(29, 54, 81, 0.18);
     flex-shrink: 0;
   }
 
@@ -174,7 +140,7 @@ const CSS = `
 
   .fx-arc {
     fill: none;
-    stroke: #8dbea6;
+    stroke: #A17C2D;
     stroke-width: 1.6;
     stroke-linecap: butt;
     stroke-dasharray: 1;
@@ -203,8 +169,8 @@ const CSS = `
     margin-left: -7px;
     margin-top: -7px;
     border-radius: 50%;
-    background: #14543c;
-    box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.9), 0 3px 8px rgba(15, 74, 50, 0.35);
+    background: #1D3651;
+    box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.9), 0 3px 8px rgba(29, 54, 81, 0.35);
     transform: scale(0);
   }
 
@@ -213,7 +179,7 @@ const CSS = `
     position: absolute;
     inset: -5px;
     border-radius: 50%;
-    border: 1.5px solid rgba(26, 104, 72, 0.55);
+    border: 1.5px solid rgba(161, 124, 45, 0.7);
     opacity: 0;
   }
 
@@ -239,11 +205,11 @@ const CSS = `
     position: relative;
     display: flex;
     align-items: center;
-    background: linear-gradient(180deg, #ffffff 0%, #fafcfb 100%);
-    border: 1px solid #edf1ef;
+    background: #FFFFFF;
+    border: 1px solid rgba(29, 54, 81, 0.1);
     border-radius: 22px;
     padding: 16px 44px 16px 20px;
-    box-shadow: 0 16px 36px rgba(22, 40, 32, 0.08);
+    box-shadow: 0 16px 36px rgba(29, 54, 81, 0.08);
     overflow: hidden;
     min-width: 0;
     transform: translate(var(--ox), 0);
@@ -255,7 +221,7 @@ const CSS = `
 
   .fx-card:hover {
     transform: translate(var(--ox), -6px);
-    box-shadow: 0 22px 44px rgba(22, 40, 32, 0.13);
+    box-shadow: 0 22px 44px rgba(29, 54, 81, 0.13);
   }
 
   .fx-card::after {
@@ -265,7 +231,7 @@ const CSS = `
     bottom: 0;
     left: 0;
     width: 24%;
-    background: linear-gradient(100deg, transparent, rgba(60, 150, 110, 0.09), transparent);
+    background: linear-gradient(100deg, transparent, rgba(161, 124, 45, 0.12), transparent);
     transform: translateX(-130%);
     animation: fxShine 7s ease-in-out calc(var(--d, 0s) + 2.5s) infinite;
     pointer-events: none;
@@ -277,7 +243,7 @@ const CSS = `
     right: 0;
     width: 48px;
     height: 44px;
-    fill: #0f4a32;
+    fill: #1D3651;
     transform-origin: top right;
   }
 
@@ -288,11 +254,11 @@ const CSS = `
     height: 56px;
     min-width: 56px;
     border-radius: 15px;
-    background: linear-gradient(155deg, #1c7a50 0%, #0a3d29 100%);
-    color: #ffffff;
+    background: #1D3651;
+    color: #A17C2D;
     display: grid;
     place-items: center;
-    box-shadow: 0 10px 18px -8px rgba(8, 50, 34, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.18);
+    box-shadow: 0 10px 18px -8px rgba(29, 54, 81, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.18);
     transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
   }
 
@@ -322,7 +288,7 @@ const CSS = `
   .fx-rule {
     width: 1px;
     height: 44px;
-    background: #dde3e0;
+    background: rgba(29, 54, 81, 0.16);
     margin: 0 18px;
     flex-shrink: 0;
   }
@@ -331,7 +297,7 @@ const CSS = `
     font-size: 16.5px;
     font-weight: 700;
     letter-spacing: -0.02em;
-    color: #151816;
+    color: #1D3651;
     margin: 0 0 3px;
     line-height: 1.3;
   }
@@ -340,7 +306,7 @@ const CSS = `
     margin: 0;
     font-size: 12.5px;
     line-height: 1.5;
-    color: #5b6560;
+    color: #1D3651;
     overflow-wrap: break-word;
   }
 
@@ -420,11 +386,6 @@ const CSS = `
     30%, 100% { transform: translateX(420%) skewX(-18deg); }
   }
 
-  @keyframes fxDrift {
-    0%, 100% { transform: translate3d(0, 0, 0); }
-    50% { transform: translate3d(0, -16px, 0); }
-  }
-
   /* ---------- responsive ---------- */
   @media (min-width: 720px) {
     .fx-line {
@@ -450,7 +411,7 @@ const CSS = `
     .fx-shell {
       grid-template-columns: 1fr;
       gap: 28px;
-      padding: 32px 24px 44px;
+      padding: 48px 24px 64px;
     }
 
     .fx-right {
@@ -472,7 +433,7 @@ const CSS = `
 
   @media (max-width: 640px) {
     .fx-shell {
-      padding: 28px 16px 40px;
+      padding: 44px 16px 60px;
     }
 
     .fx-badges {
@@ -744,9 +705,6 @@ export default function FocusAreas() {
   return (
     <section className={shown ? 'fx in' : 'fx'} ref={sectionRef} aria-label={focusHeading}>
       <style>{CSS}</style>
-      <div className="fx-blob fx-blob-a" />
-      <div className="fx-blob fx-blob-b" />
-      <div className="fx-wave" />
 
       <div className="fx-shell">
         <div className="fx-left">
@@ -781,8 +739,8 @@ export default function FocusAreas() {
                 <svg width={geo.w} height={geo.h} viewBox={`0 0 ${geo.w} ${geo.h}`}>
                   <path className="fx-arc" d={geo.d} pathLength="1" />
                   <g className="fx-travel">
-                    <circle r="9" fill="#2f9a72" opacity="0.16" />
-                    <circle r="3.6" fill="#1f8a63" />
+                    <circle r="9" fill="#A17C2D" opacity="0.18" />
+                    <circle r="3.6" fill="#1D3651" />
                     <animateMotion
                       dur="5.5s"
                       repeatCount="indefinite"

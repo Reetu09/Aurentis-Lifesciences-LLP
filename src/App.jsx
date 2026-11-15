@@ -4,14 +4,14 @@ import Home from './pages/Home'
 
 const GLOBAL_CSS = `
   :root {
-    --dark-teal: #1B4A52;
-    --mid-teal: #2A9D8F;
-    --light-teal: #4DB8AC;
-    --pale-teal: #E8F5F3;
-    --gold: #C9A84C;
-    --gold-light: #E8C97A;
-    --off-white: #F7F9F9;
-    --gray-600: #5A7A7E;
+    --dark-teal: #1D3651;
+    --mid-teal: #1D3651;
+    --light-teal: #FFFFFF;
+    --pale-teal: #FFFFFF;
+    --gold: #A17C2D;
+    --gold-light: #A17C2D;
+    --off-white: #FFFFFF;
+    --gray-600: #1D3651;
     --font-display: 'Playfair Display', serif;
     --font-body: 'Inter', sans-serif;
   }
@@ -28,8 +28,8 @@ const GLOBAL_CSS = `
 
   body {
     font-family: var(--font-body);
-    background: #0A2328;
-    color: #F7F9F9;
+    background: #1D3651;
+    color: #FFFFFF;
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
   }

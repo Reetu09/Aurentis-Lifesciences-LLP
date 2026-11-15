@@ -7,8 +7,8 @@ const CSS = `
   .pr {
     position: relative;
     overflow: hidden;
-    background: #f7fbf8;
-    color: #17241f;
+    background: #FFFFFF;
+    color: #1D3651;
     scroll-margin-top: 92px;
   }
 
@@ -23,7 +23,7 @@ const CSS = `
     height: 200px;
     top: -50px;
     left: -70px;
-    background: radial-gradient(ellipse at 40% 40%, rgba(198, 228, 214, 0.85), transparent 70%);
+    background: radial-gradient(ellipse at 40% 40%, rgba(161, 124, 45, 0.16), transparent 70%);
     animation: prDrift 10s ease-in-out infinite;
   }
 
@@ -32,7 +32,7 @@ const CSS = `
     height: 220px;
     right: -90px;
     bottom: -70px;
-    background: radial-gradient(ellipse at 60% 40%, rgba(232, 212, 150, 0.4), transparent 70%);
+    background: radial-gradient(ellipse at 60% 40%, rgba(29, 54, 81, 0.06), transparent 70%);
     animation: prDrift 12s ease-in-out infinite reverse;
   }
 
@@ -50,7 +50,7 @@ const CSS = `
     font-weight: 700;
     font-size: clamp(28px, 3vw, 38px);
     letter-spacing: -0.03em;
-    color: #0f2a1d;
+    color: #1D3651;
     text-align: center;
     line-height: 1.1;
     margin: 0;
@@ -61,7 +61,7 @@ const CSS = `
     width: 64px;
     height: 3px;
     border-radius: 3px;
-    background: linear-gradient(90deg, #14703f, #d9b25f);
+    background: #A17C2D;
     margin: 12px auto 0;
     transform: scaleX(0);
     transform-origin: center;
@@ -91,16 +91,16 @@ const CSS = `
     gap: 20px;
     padding: 28px 24px 28px 32px;
     border-radius: 30px;
-    border: 1px solid #dcebe3;
-    background: linear-gradient(135deg, #ffffff 0%, #f6fbf8 100%);
-    box-shadow: 0 14px 34px rgba(20, 48, 36, 0.07);
+    border: 1px solid rgba(29, 54, 81, 0.12);
+    background: #FFFFFF;
+    box-shadow: 0 14px 34px rgba(29, 54, 81, 0.08);
     transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.4s ease, border-color 0.4s ease;
   }
 
   .pr-card:hover {
     transform: translateY(-6px);
-    border-color: rgba(217, 178, 95, 0.7);
-    box-shadow: 0 24px 46px rgba(20, 48, 36, 0.13), 0 0 0 4px rgba(217, 178, 95, 0.1);
+    border-color: rgba(161, 124, 45, 0.7);
+    box-shadow: 0 24px 46px rgba(29, 54, 81, 0.13), 0 0 0 4px rgba(161, 124, 45, 0.1);
   }
 
   .pr-card::before {
@@ -110,7 +110,7 @@ const CSS = `
     left: 0;
     right: 0;
     height: 3px;
-    background: linear-gradient(90deg, #14703f 0%, #4aa57a 50%, #d9b25f 100%);
+    background: #A17C2D;
     transform: scaleX(0);
     transform-origin: left center;
     transition: transform 1s cubic-bezier(0.22, 1, 0.36, 1) calc(var(--d, 0s) + 0.4s);
@@ -127,7 +127,7 @@ const CSS = `
     bottom: 0;
     left: 0;
     width: 22%;
-    background: linear-gradient(100deg, transparent, rgba(60, 150, 110, 0.08), transparent);
+    background: linear-gradient(100deg, transparent, rgba(161, 124, 45, 0.1), transparent);
     transform: translateX(-130%);
     animation: prShine 7s ease-in-out calc(var(--d, 0s) + 2.5s) infinite;
     pointer-events: none;
@@ -146,7 +146,7 @@ const CSS = `
     font-size: clamp(24px, 2.2vw, 29px);
     letter-spacing: -0.02em;
     line-height: 1.2;
-    color: #0f2a1d;
+    color: #1D3651;
   }
 
   .pr-name sup {
@@ -156,13 +156,13 @@ const CSS = `
     font-size: 0.45em;
     line-height: 0;
     vertical-align: super;
-    color: #b98c32;
+    color: #A17C2D;
   }
 
   .pr-row + .pr-row {
     margin-top: 15px;
     padding-top: 15px;
-    border-top: 1px dashed #d7e6de;
+    border-top: 1px dashed rgba(29, 54, 81, 0.18);
   }
 
   .pr-label {
@@ -174,7 +174,7 @@ const CSS = `
     font-weight: 700;
     letter-spacing: 0.13em;
     text-transform: uppercase;
-    color: #14703f;
+    color: #A17C2D;
   }
 
   .pr-label::before {
@@ -182,7 +182,7 @@ const CSS = `
     width: 6px;
     height: 6px;
     border-radius: 2px;
-    background: #d9b25f;
+    background: #A17C2D;
     transform: rotate(45deg);
     flex: 0 0 auto;
   }
@@ -191,7 +191,7 @@ const CSS = `
     display: block;
     font-size: 14.5px;
     line-height: 1.55;
-    color: #2a3732;
+    color: #1D3651;
     overflow-wrap: break-word;
   }
 
@@ -201,7 +201,7 @@ const CSS = `
     overflow: hidden;
     min-height: 240px;
     border-radius: 22px;
-    background: radial-gradient(circle at 50% 62%, #ffffff 0%, #e8f5ee 58%, #d3ecdf 100%);
+    background: #FFFFFF;
     display: grid;
     place-items: center;
     box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.7);
@@ -214,7 +214,7 @@ const CSS = `
     width: 180px;
     height: 180px;
     border-radius: 50%;
-    border: 1px solid rgba(20, 112, 63, 0.18);
+    border: 1px solid rgba(29, 54, 81, 0.16);
     transform: translate(-50%, -50%);
     animation: prRing 4.5s ease-in-out infinite;
   }
@@ -223,7 +223,7 @@ const CSS = `
     width: 250px;
     height: 250px;
     border-style: dashed;
-    border-color: rgba(185, 140, 50, 0.3);
+    border-color: rgba(161, 124, 45, 0.4);
     animation-delay: 1.4s;
   }
 
@@ -232,8 +232,8 @@ const CSS = `
     width: 5px;
     height: 5px;
     border-radius: 50%;
-    background: #e6c677;
-    box-shadow: 0 0 8px rgba(217, 178, 95, 0.9);
+    background: #A17C2D;
+    box-shadow: 0 0 8px rgba(161, 124, 45, 0.9);
     animation: prSpark 4s ease-in-out infinite;
   }
 
@@ -369,9 +369,16 @@ const CSS = `
     }
   }
 
+  @media (max-width: 980px) {
+    .pr-shell {
+      padding-top: 60px;
+      padding-bottom: 72px;
+    }
+  }
+
   @media (max-width: 520px) {
     .pr-shell {
-      padding: 28px 16px 40px;
+      padding: 56px 16px 68px;
     }
 
     .pr-grid {
