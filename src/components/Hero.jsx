@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef } from 'react'
 import content from '../data/content.json'
 
 const PARTICLES = Array.from({ length: 32 }, (_, i) => ({
@@ -13,7 +13,7 @@ const PARTICLES = Array.from({ length: 32 }, (_, i) => ({
 const CSS = `
   .aur-hero {
     position: relative;
-    min-height: 100vh;
+    min-height: 0;
     display: flex;
     flex-direction: column;
     background:
@@ -22,7 +22,7 @@ const CSS = `
       linear-gradient(165deg, #061418 0%, #0A2328 42%, #12363C 72%, #061418 100%);
     overflow: hidden;
     color: #ffffff;
-    padding: 88px 0 28px;
+    padding: 90px 0 6px;
   }
 
   .aur-hero-particle {
@@ -42,7 +42,6 @@ const CSS = `
     max-width: 1280px;
     margin: 0 auto;
     padding: 0 64px;
-    flex: 1;
     display: flex;
     flex-direction: column;
     min-height: 0;
@@ -53,13 +52,13 @@ const CSS = `
     grid-template-columns: 1.05fr 0.95fr;
     align-items: center;
     gap: 12px;
-    flex: 1;
   }
 
   .aur-hero-left {
     position: relative;
     z-index: 3;
     min-width: 0;
+    transform: translateY(-40px);
   }
 
   .aur-reveal {
@@ -271,21 +270,19 @@ const CSS = `
     position: relative;
     width: 100%;
     max-width: 520px;
-    aspect-ratio: 520 / 460;
+    aspect-ratio: 520 / 500;
     margin: 0 auto;
-    container-type: inline-size;
     overflow: hidden;
     animation: stageIn 1.1s cubic-bezier(0.22, 1, 0.36, 1) 0.3s both;
   }
 
   .aur-stage-canvas {
     position: absolute;
-    top: 0;
+    top: calc(36px * var(--stage-scale, 1));
     left: 50%;
     width: 520px;
     height: 460px;
-    transform: translateX(-50%);
-    transform: translateX(-50%) scale(min(1, 100cqi / 520px));
+    transform: translateX(-50%) scale(var(--stage-scale, 1));
     transform-origin: top center;
   }
 
@@ -562,98 +559,6 @@ const CSS = `
     font-weight: 400;
   }
 
-  .aur-focus {
-    position: relative;
-    z-index: 4;
-    margin-top: 28px;
-    opacity: 0;
-    transform: translateY(28px);
-    transition: opacity 0.8s ease, transform 0.8s ease;
-  }
-
-  .aur-focus.in {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  .aur-focus h2 {
-    font-family: var(--font-display);
-    font-size: clamp(22px, 2.4vw, 32px);
-    font-weight: 600;
-    letter-spacing: -0.02em;
-    line-height: 1.25;
-    color: #ffffff;
-    margin-bottom: 16px;
-    max-width: 100%;
-    overflow-wrap: break-word;
-  }
-
-  .aur-focus-grid {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 14px;
-  }
-
-  .aur-focus-card {
-    min-width: 0;
-    background: rgba(8, 28, 34, 0.72);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    border: 1px solid rgba(77, 184, 172, 0.22);
-    border-radius: 28px;
-    padding: 22px 20px;
-    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.22);
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
-  }
-
-  .aur-focus-card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 18px 36px rgba(0, 0, 0, 0.28);
-  }
-
-  .aur-focus-card h3 {
-    font-size: 16px;
-    font-weight: 700;
-    color: #ffffff;
-    margin-bottom: 8px;
-    line-height: 1.35;
-    letter-spacing: -0.01em;
-    overflow-wrap: break-word;
-  }
-
-  .aur-focus-card p {
-    font-size: 13.5px;
-    line-height: 1.6;
-    color: rgba(160, 196, 196, 0.92);
-    overflow-wrap: break-word;
-  }
-
-  .aur-badges {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px 12px;
-    margin-top: 16px;
-  }
-
-  .aur-badge {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    max-width: 100%;
-    padding: 8px 16px;
-    border: 1px solid #C9A84C;
-    border-radius: 999px;
-    background: rgba(10, 35, 40, 0.45);
-    font-size: 12px;
-    font-weight: 600;
-    letter-spacing: 0.02em;
-    line-height: 1.35;
-    color: #D4AF37;
-    text-align: center;
-    overflow-wrap: break-word;
-  }
-
   @keyframes fadeUp {
     to { opacity: 1; transform: translateY(0); }
   }
@@ -716,8 +621,7 @@ const CSS = `
   @media (prefers-reduced-motion: reduce) {
     .aur-reveal,
     .aur-hero h1 .ln,
-    .aur-stats,
-    .aur-focus {
+    .aur-stats {
       animation: none !important;
       transition: none !important;
       opacity: 1 !important;
@@ -743,13 +647,17 @@ const CSS = `
 
   @media (max-width: 980px) {
     .aur-hero {
-      min-height: auto;
-      padding: 100px 0 28px;
+      min-height: 0;
+      padding: 112px 0 12px;
     }
 
     .aur-hero-shell {
       padding-left: max(20px, env(safe-area-inset-left));
       padding-right: max(20px, env(safe-area-inset-right));
+    }
+
+    .aur-hero-left {
+      transform: none;
     }
 
     .aur-hero-grid {
@@ -760,10 +668,6 @@ const CSS = `
 
     .aur-hero h1 {
       font-size: clamp(26px, 6.4vw, 42px);
-    }
-
-    .aur-focus h2 {
-      text-align: center;
     }
 
     .aur-hero-badge,
@@ -782,12 +686,18 @@ const CSS = `
       justify-content: center;
     }
 
+    .aur-btn-primary,
+    .aur-btn-ghost {
+      padding: 11px 22px;
+      font-size: 12.5px;
+    }
+
     .aur-hero-feats {
       gap: 14px 22px;
     }
 
     .aur-stage {
-      margin-top: 18px;
+      margin-top: 6px;
     }
 
     .aur-stat {
@@ -810,15 +720,9 @@ const CSS = `
     }
   }
 
-  @media (max-width: 800px) {
-    .aur-focus-grid {
-      grid-template-columns: 1fr;
-    }
-  }
-
   @media (max-width: 640px) {
     .aur-hero {
-      padding: 100px 0 max(24px, env(safe-area-inset-bottom));
+      padding: 104px 0 max(10px, env(safe-area-inset-bottom));
     }
 
     .aur-hero-shell {
@@ -860,21 +764,18 @@ const CSS = `
     .aur-hero-actions {
       flex-direction: column;
       align-items: stretch;
-      width: min(100%, 340px);
+      width: min(100%, 270px);
       margin-inline: auto;
       gap: 10px;
-    }
-
-    .aur-focus-grid {
-      grid-template-columns: 1fr;
     }
 
     .aur-btn-primary,
     .aur-btn-ghost {
       justify-content: center;
       width: 100%;
-      min-height: 48px;
-      padding: 14px 18px;
+      min-height: 42px;
+      padding: 10px 16px;
+      font-size: 12.5px;
     }
 
     .aur-stats {
@@ -941,38 +842,32 @@ function HeartPulseIcon() {
   )
 }
 
-function MortarIcon() {
+function LeafIcon() {
   return (
     <svg viewBox="0 0 24 24" aria-hidden="true">
-      <path d="M4 14c0 3.3 3.6 6 8 6s8-2.7 8-6H4z" />
-      <path d="M3 11h18" />
-      <path d="M16 4l4 6" />
+      <path d="M19 4C10 4 5.5 8.5 5.5 14.5c0 2.2 1.3 4.5 3.7 5 6.3 1.3 9.8-5.3 9.8-15.5z" />
+      <path d="M5 20c3-5 6-8.5 10-11" />
     </svg>
   )
 }
 
 export default function Hero() {
-  const focusRef = useRef(null)
-  const [focusIn, setFocusIn] = useState(false)
   const [line1, line2, line3] = content.hero.headline
+  const stageRef = useRef(null)
 
   useEffect(() => {
-    const el = focusRef.current
-    if (!el) return
-    const fallback = setTimeout(() => setFocusIn(true), 800)
-    const io = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setFocusIn(true)
-          io.disconnect()
-        }
-      },
-      { threshold: 0.2 }
-    )
-    io.observe(el)
+    const el = stageRef.current
+    if (!el) return undefined
+    const apply = () => {
+      el.style.setProperty('--stage-scale', String(Math.min(1, el.clientWidth / 520)))
+    }
+    apply()
+    const observer = new ResizeObserver(apply)
+    observer.observe(el)
+    window.addEventListener('resize', apply)
     return () => {
-      clearTimeout(fallback)
-      io.disconnect()
+      observer.disconnect()
+      window.removeEventListener('resize', apply)
     }
   }, [])
 
@@ -1023,13 +918,13 @@ export default function Hero() {
             </div>
           </div>
 
-          <div className="aur-stage" aria-hidden="true">
+          <div className="aur-stage" aria-hidden="true" ref={stageRef}>
             <div className="aur-stage-canvas">
             <div className="aur-stage-bloom" />
 
             <div className="aur-orbit-track t2">
               <span className="aur-orbit-node n3">
-                <MortarIcon />
+                <LeafIcon />
               </span>
             </div>
             <div className="aur-orbit-track t1">
@@ -1058,23 +953,6 @@ export default function Hero() {
               <div className="aur-ped-ring r3" />
             </div>
             </div>
-          </div>
-        </div>
-
-        <div className={`aur-focus${focusIn ? ' in' : ''}`} ref={focusRef}>
-          <h2>{content.hero.focusHeading}</h2>
-          <div className="aur-focus-grid">
-            {content.hero.focus.map((item) => (
-              <article className="aur-focus-card" key={item.title}>
-                <h3>{item.title}</h3>
-                <p>{item.description}</p>
-              </article>
-            ))}
-          </div>
-          <div className="aur-badges">
-            {content.hero.badges.map((badge) => (
-              <span className="aur-badge" key={badge}>{badge}</span>
-            ))}
           </div>
         </div>
       </div>

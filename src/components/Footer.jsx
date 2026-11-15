@@ -6,7 +6,7 @@ const CSS = `
     position: relative;
     background: linear-gradient(180deg, #0A2328, #1B4A52);
     color: #ffffff;
-    padding: 72px 64px 48px;
+    padding: 56px 0 40px;
     scroll-margin-top: 88px;
   }
 
@@ -21,8 +21,9 @@ const CSS = `
   }
 
   .aur-partner-grid {
-    max-width: 1280px;
+    max-width: 1200px;
     margin: 0 auto;
+    padding: 0 40px;
     display: grid;
     grid-template-columns: 1.15fr 0.85fr;
     gap: 48px;
@@ -30,39 +31,39 @@ const CSS = `
   }
 
   .aur-partner-logo {
-    height: 50px;
+    height: 46px;
     width: auto;
     border-radius: 8px;
     background: #ffffff;
-    margin-bottom: 18px;
+    margin-bottom: 16px;
   }
 
-  .aur-partner h2 {
+  .aur-partner .aur-partner-grid h2 {
     font-family: var(--font-display);
-    font-size: clamp(28px, 3vw, 40px);
+    font-size: clamp(22px, 2.1vw, 28px);
     font-weight: 600;
     line-height: 1.2;
     letter-spacing: -0.02em;
     color: #ffffff;
-    margin-bottom: 22px;
-    max-width: 640px;
+    margin-bottom: 14px;
+    max-width: 560px;
     overflow-wrap: break-word;
   }
 
-  .aur-partner h3 {
+  .aur-partner .aur-partner-grid h3 {
     font-family: var(--font-display);
-    font-size: clamp(20px, 2vw, 26px);
+    font-size: clamp(17px, 1.6vw, 20px);
     font-weight: 600;
     color: var(--gold-light);
-    margin-bottom: 12px;
+    margin-bottom: 10px;
     line-height: 1.3;
   }
 
   .aur-partner-copy {
-    color: rgba(247, 249, 249, 0.78);
-    font-size: 15px;
-    line-height: 1.75;
-    max-width: 640px;
+    color: rgba(247, 249, 249, 0.8);
+    font-size: 14px;
+    line-height: 1.7;
+    max-width: 560px;
     overflow-wrap: break-word;
   }
 
@@ -76,7 +77,7 @@ const CSS = `
     display: flex;
     gap: 12px;
     align-items: flex-start;
-    color: rgba(247, 249, 249, 0.78);
+    color: rgba(247, 249, 249, 0.8);
     font-size: 14px;
     line-height: 1.6;
     min-width: 0;
@@ -114,11 +115,11 @@ const CSS = `
     background: #0A2328;
     color: rgba(247, 249, 249, 0.72);
     border-top: 1px solid rgba(42, 157, 143, 0.2);
-    padding: 18px 24px 24px;
+    padding: 16px 24px 20px;
   }
 
   .aur-footer p {
-    max-width: 1280px;
+    max-width: 1200px;
     margin: 0 auto;
     text-align: center;
     font-size: 13px;
@@ -128,18 +129,23 @@ const CSS = `
 
   @media (max-width: 980px) {
     .aur-partner {
-      padding: 56px 24px 40px;
+      padding: 48px 0 36px;
     }
 
     .aur-partner-grid {
       grid-template-columns: 1fr;
       gap: 32px;
+      padding: 0 24px;
     }
   }
 
   @media (max-width: 640px) {
     .aur-partner {
-      padding: 48px 16px 32px;
+      padding: 40px 0 28px;
+    }
+
+    .aur-partner-grid {
+      padding: 0 16px;
     }
   }
 `
@@ -186,13 +192,15 @@ export default function Footer() {
   }, [])
 
   const contact = content.contact
+  // "Haryana - 121003" ko "Haryana 121003" bana deta hai taaki line "-" par na toote
+  const address = contact.address.replace(/\s*-\s*(\d{6})/, ' $1')
 
   return (
     <>
       <section className="aur-partner" id="contact">
         <div className="aur-partner-grid">
           <div>
-            <img src="/logo.jpeg" alt="" height="50" className="aur-partner-logo" />
+            <img src="/logo.jpeg" alt="Aurentis Lifesciences" height="46" className="aur-partner-logo" />
             <h2>{contact.heading}</h2>
             <h3>{contact.partnerHeading}</h3>
             <p className="aur-partner-copy">{contact.partnerText}</p>
@@ -205,7 +213,7 @@ export default function Footer() {
                 <PinIcon />
                 <span className="aur-contact-text">
                   <b>{contact.addressLabel}:</b>
-                  {contact.address}
+                  {address}
                 </span>
               </div>
               <div className="aur-contact-row">
@@ -228,7 +236,7 @@ export default function Footer() {
       </section>
 
       <footer className="aur-footer">
-        <p>{content.footer.line}</p>
+        <p>&copy; {new Date().getFullYear()} Aurentis Lifesciences LLP. All rights reserved.</p>
       </footer>
     </>
   )
