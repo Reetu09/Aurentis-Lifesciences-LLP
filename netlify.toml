@@ -2,13 +2,10 @@
   command = "npm run build"
   publish = "dist"
 
-# Rewrite page loads for the SPA. POST is excluded so a submission to "/"
-# still reaches Netlify Forms instead of being rewritten to index.html.
 [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
-  conditions = {Method = ["GET", "HEAD"]}
 
 # Hashed build files only. sitemap.xml and robots.txt stay uncached so updates publish immediately.
 [[headers]]
