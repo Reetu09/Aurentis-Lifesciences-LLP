@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
+import { Link, useLocation } from 'react-router-dom'
 import content from '../data/content.json'
 
 const CSS = `
@@ -282,12 +283,14 @@ function PhoneIcon() {
   )
 }
 
-const SECTION_IDS = ['home', 'about', 'products', 'contact']
+const SECTION_IDS = ['home', 'about', 'products']
 
 export default function Navbar() {
+  const { pathname } = useLocation()
+  const onContact = pathname === '/contact'
   const [scrolled, setScrolled] = useState(false)
   const [open, setOpen] = useState(false)
-  const [active, setActive] = useState('#home')
+  const [active, setActive] = useState(onContact ? '/contact' : '#home')
   const headerRef = useRef(null)
   const lockUntil = useRef(0)
 
@@ -312,11 +315,23 @@ export default function Navbar() {
     }
     window.setTimeout(fix, 700)
     window.setTimeout(fix, 1250)
-    if (window.history?.replaceState) window.history.replaceState(null, '', `#${id}`)
+    if (window.history?.replaceState) window.history.replaceState(window.history.state, '', `#${id}`)
   }, [])
 
   // active link: scroll par bhi navbar height ke hisab se
   useEffect(() => {
+    if (onContact) {
+      setActive('/contact')
+      const onScroll = () => setScrolled(window.scrollY > 16)
+      onScroll()
+      window.addEventListener('scroll', onScroll, { passive: true })
+      window.addEventListener('resize', onScroll)
+      return () => {
+        window.removeEventListener('scroll', onScroll)
+        window.removeEventListener('resize', onScroll)
+      }
+    }
+
     const update = () => {
       const line = window.scrollY + navHeight() + 40
       let current = '#home'
@@ -324,8 +339,6 @@ export default function Navbar() {
         const el = document.getElementById(id)
         if (el && el.getBoundingClientRect().top + window.scrollY <= line) current = `#${id}`
       }
-      const atBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4
-      if (atBottom) current = '#contact'
       setActive(current)
     }
     const onScroll = () => {
@@ -344,10 +357,12 @@ export default function Navbar() {
       window.removeEventListener('resize', onScroll)
       window.clearInterval(settle)
     }
-  }, [])
+  }, [onContact])
 
   // sabhi "#section" links (navbar + hero buttons) ek hi sahi scroll se chalein
   useEffect(() => {
+    if (onContact) return undefined
+
     const onClick = (event) => {
       if (event.defaultPrevented || event.button !== 0) return
       if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return
@@ -369,7 +384,7 @@ export default function Navbar() {
       document.removeEventListener('click', onClick)
       window.clearTimeout(timer)
     }
-  }, [scrollToId])
+  }, [scrollToId, onContact])
 
   const close = () => setOpen(false)
 
@@ -377,22 +392,40 @@ export default function Navbar() {
     <header className={`aur-nav${scrolled ? ' scrolled' : ''}`} ref={headerRef}>
       <style>{CSS}</style>
       <div className="aur-nav-inner">
-        <a href="#home" className="aur-nav-brand" onClick={close}>
-          <img src="/logo.jpeg" alt="Aurentis Lifesciences LLP" className="aur-nav-logo" />
-        </a>
+        {onContact ? (
+          <Link to="/#home" className="aur-nav-brand" onClick={close}>
+            <img src="/logo.jpeg" alt="Aurentis Lifesciences LLP logo" className="aur-nav-logo" />
+          </Link>
+        ) : (
+          <a href="#home" className="aur-nav-brand" onClick={close}>
+            <img src="/logo.jpeg" alt="Aurentis Lifesciences LLP logo" className="aur-nav-logo" />
+          </a>
+        )}
 
         <nav className={`aur-nav-links${open ? ' open' : ''}`}>
-          {content.nav.links.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              className={`aur-nav-link${active === link.href ? ' active' : ''}`}
-              onClick={close}
-            >
-              {link.label}
-              {active === link.href ? <span className="aur-nav-indicator" /> : null}
-            </a>
-          ))}
+          {content.nav.links.map((link) => {
+            const isActive = onContact ? link.href === '/contact' : active === link.href
+            const className = `aur-nav-link${isActive ? ' active' : ''}`
+            const label = (
+              <>
+                {link.label}
+                {isActive ? <span className="aur-nav-indicator" /> : null}
+              </>
+            )
+            if (link.href.startsWith('/') || onContact) {
+              const to = link.href.startsWith('#') ? `/${link.href}` : link.href
+              return (
+                <Link key={link.href} to={to} className={className} onClick={close}>
+                  {label}
+                </Link>
+              )
+            }
+            return (
+              <a key={link.href} href={link.href} className={className} onClick={close}>
+                {label}
+              </a>
+            )
+          })}
           <a href={content.nav.phoneHref} className="aur-nav-cta mobile" onClick={close}>
             <PhoneIcon />
             {content.nav.cta}

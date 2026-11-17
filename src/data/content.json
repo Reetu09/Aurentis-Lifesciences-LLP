@@ -7,7 +7,7 @@
       { "label": "Home", "href": "#home" },
       { "label": "About", "href": "#about" },
       { "label": "Products", "href": "#products" },
-      { "label": "Contact", "href": "#contact" }
+      { "label": "Contact", "href": "/contact" }
     ],
     "cta": "Call Us",
     "phoneHref": "tel:+919811814126"

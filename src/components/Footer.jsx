@@ -200,7 +200,7 @@ export default function Footer() {
       <section className="aur-partner" id="contact">
         <div className="aur-partner-grid">
           <div>
-            <img src="/logo.jpeg" alt="Aurentis Lifesciences" height="46" className="aur-partner-logo" />
+            <img src="/logo.jpeg" alt="Aurentis Lifesciences LLP logo" height="46" className="aur-partner-logo" loading="lazy" />
             <h2>{contact.heading}</h2>
             <h3>{contact.partnerHeading}</h3>
             <p className="aur-partner-copy">{contact.partnerText}</p>

@@ -1,6 +1,8 @@
 import { useEffect } from 'react'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import Home from './pages/Home'
+import Contact from './pages/Contact'
 
 const GLOBAL_CSS = `
   :root {
@@ -72,9 +74,19 @@ export default function App() {
   }, [])
 
   return (
-    <>
-      <Navbar />
-      <Home />
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <>
+              <Navbar />
+              <Home />
+            </>
+          }
+        />
+        <Route path="/contact" element={<Contact />} />
+      </Routes>
+    </BrowserRouter>
   )
 }

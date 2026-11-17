@@ -4,8 +4,43 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/jpeg" href="/logo.jpeg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Dedicated to high-purity, research-driven formulations engineered for cellular protection, organ health, and advanced therapeutic care." />
-    <title>Aurentis Lifesciences LLP</title>
+    <title>__HOME_TITLE__</title>
+    <meta name="description" content="__HOME_DESCRIPTION__" />
+    <meta name="keywords" content="Aurentis Lifesciences, therapeutic nutrition, liver care, Aureliv, Tocovital, FSSAI, WHO-GMP, nutraceuticals" />
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="Aurentis Lifesciences LLP" />
+    <meta name="theme-color" content="#1D3651" />
+    <link rel="canonical" href="__SITE_URL__/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Aurentis Lifesciences LLP" />
+    <meta property="og:title" content="__HOME_TITLE__" />
+    <meta property="og:description" content="__HOME_DESCRIPTION__" />
+    <meta property="og:url" content="__SITE_URL__/" />
+    <meta property="og:image" content="__SITE_URL__/logo.jpeg" />
+    <meta property="og:locale" content="en_IN" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="__HOME_TITLE__" />
+    <meta name="twitter:description" content="__HOME_DESCRIPTION__" />
+    <meta name="twitter:image" content="__SITE_URL__/logo.jpeg" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Aurentis Lifesciences LLP",
+        "url": "__SITE_URL__",
+        "logo": "__SITE_URL__/logo.jpeg",
+        "email": "aurentislifesciences@gmail.com",
+        "areaServed": "IN"
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Aurentis Lifesciences LLP",
+        "url": "__SITE_URL__"
+      }
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
@@ -25,6 +60,18 @@
     </style>
   </head>
   <body>
+    <!--
+      Hidden blueprint so Netlify Forms can detect "contact" at build time.
+      The React page submits to this same form. The notification email is set
+      in the Netlify dashboard, not in this file.
+    -->
+    <form name="contact" method="POST" action="/" data-netlify="true" netlify-honeypot="bot-field" hidden>
+      <input type="text" name="name" />
+      <input type="email" name="email" />
+      <input type="tel" name="phone" />
+      <textarea name="message"></textarea>
+      <input name="bot-field" />
+    </form>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>

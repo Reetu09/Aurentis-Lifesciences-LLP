@@ -472,7 +472,7 @@ export default function Products() {
                 <span className="pr-spark pr-spark-2" />
                 <span className="pr-spark pr-spark-3" />
                 <div className="pr-float">
-                  <img src={VISUALS[index]} alt={item.name} />
+                  <img src={VISUALS[index]} alt={item.name} loading="lazy" />
                 </div>
               </div>
             </article>
