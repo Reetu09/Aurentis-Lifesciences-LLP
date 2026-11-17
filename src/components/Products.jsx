@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import content from '../data/content.json'
 
-const VISUALS = ['/products/aureliv.jpg', '/products/tocovital.jpg']
+const VISUALS = ['/products/aureliv.png', '/products/tocovital.png']
 
 const CSS = `
   .pr {
@@ -86,7 +86,7 @@ const CSS = `
     overflow: hidden;
     min-width: 0;
     display: grid;
-    grid-template-columns: minmax(0, 1fr) 200px;
+    grid-template-columns: minmax(0, 1fr) 240px;
     align-items: stretch;
     gap: 20px;
     padding: 28px 24px 28px 32px;
@@ -199,7 +199,7 @@ const CSS = `
   .pr-tile {
     position: relative;
     overflow: hidden;
-    min-height: 240px;
+    min-height: 260px;
     border-radius: 22px;
     background: #FFFFFF;
     display: grid;
@@ -211,8 +211,8 @@ const CSS = `
     position: absolute;
     left: 50%;
     top: 56%;
-    width: 180px;
-    height: 180px;
+    width: 200px;
+    height: 200px;
     border-radius: 50%;
     border: 1px solid rgba(29, 54, 81, 0.16);
     transform: translate(-50%, -50%);
@@ -220,8 +220,8 @@ const CSS = `
   }
 
   .pr-ring-2 {
-    width: 250px;
-    height: 250px;
+    width: 260px;
+    height: 260px;
     border-style: dashed;
     border-color: rgba(161, 124, 45, 0.4);
     animation-delay: 1.4s;
@@ -253,20 +253,10 @@ const CSS = `
 
   .pr-float img {
     display: block;
-    height: 204px;
-    width: auto;
-    max-width: 96%;
-    mix-blend-mode: multiply;
-    -webkit-mask-image:
-      linear-gradient(to right, transparent 0, #000 8%, #000 92%, transparent 100%),
-      linear-gradient(to bottom, transparent 0, #000 6%, #000 94%, transparent 100%),
-      radial-gradient(circle at 100% 0, transparent 40px, #000 70px);
-    -webkit-mask-composite: source-in, source-in;
-    mask-image:
-      linear-gradient(to right, transparent 0, #000 8%, #000 92%, transparent 100%),
-      linear-gradient(to bottom, transparent 0, #000 6%, #000 94%, transparent 100%),
-      radial-gradient(circle at 100% 0, transparent 40px, #000 70px);
-    mask-composite: intersect, intersect;
+    width: 100%;
+    height: auto;
+    max-height: 230px;
+    object-fit: contain;
     transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
   }
 
@@ -393,11 +383,11 @@ const CSS = `
     }
 
     .pr-tile {
-      min-height: 200px;
+      min-height: 220px;
     }
 
     .pr-float img {
-      height: 170px;
+      max-height: 210px;
     }
   }
 `
