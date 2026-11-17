@@ -1,6 +1,6 @@
 // Change this when the production domain is known. Every canonical URL,
 // Open Graph URL, sitemap entry, and robots Sitemap line is built from it.
-export const SITE_URL = 'https://YOUR-DOMAIN.com'
+export const SITE_URL = 'https://aurentislifesciences.com'
 
 export const HOME_TITLE = 'Aurentis Lifesciences LLP | Science-Backed Nutrition'
 export const HOME_DESCRIPTION =
